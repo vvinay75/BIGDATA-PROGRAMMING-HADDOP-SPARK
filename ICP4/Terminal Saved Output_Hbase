@@ -1,0 +1,828 @@
+Last login: Sat Jun 16 15:46:20 on ttys000
+LalithamarisMBP:~ lalithajetty$ source ~/.profile
+LalithamarisMBP:~ lalithajetty$ hstart
+WARNING: Attempting to start all Apache Hadoop daemons as lalithajetty in 10 seconds.
+WARNING: This is not a recommended production deployment configuration.
+WARNING: Use CTRL-C to abort.
+Starting namenodes on [localhost]
+localhost: namenode is running as process 5665.  Stop it first.
+Starting datanodes
+localhost: datanode is running as process 5763.  Stop it first.
+Starting secondary namenodes [LalithamarisMBP]
+LalithamarisMBP: secondarynamenode is running as process 5881.  Stop it first.
+2018-06-16 17:16:33,485 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting resourcemanager
+resourcemanager is running as process 6023.  Stop it first.
+Starting nodemanagers
+localhost: nodemanager is running as process 6118.  Stop it first.
+LalithamarisMBP:~ lalithajetty$ hstop
+WARNING: Stopping all Apache Hadoop daemons as lalithajetty in 10 seconds.
+WARNING: Use CTRL-C to abort.
+Stopping namenodes on [localhost]
+Stopping datanodes
+Stopping secondary namenodes [LalithamarisMBP]
+2018-06-16 17:17:16,636 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Stopping nodemanagers
+Stopping resourcemanager
+LalithamarisMBP:~ lalithajetty$ jps
+9136 Jps
+7573 HMaster
+LalithamarisMBP:~ lalithajetty$ source ~/.profile
+LalithamarisMBP:~ lalithajetty$ hstart
+WARNING: Attempting to start all Apache Hadoop daemons as lalithajetty in 10 seconds.
+WARNING: This is not a recommended production deployment configuration.
+WARNING: Use CTRL-C to abort.
+Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes [LalithamarisMBP]
+2018-06-16 17:18:21,274 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting resourcemanager
+Starting nodemanagers
+LalithamarisMBP:~ lalithajetty$ jps
+9797 Jps
+7573 HMaster
+9737 NodeManager
+9386 DataNode
+9291 NameNode
+9646 ResourceManager
+9503 SecondaryNameNode
+LalithamarisMBP:~ lalithajetty$ cd /usr
+LalithamarisMBP:usr lalithajetty$ cd local/cellar/hbase/1.2.6.1
+LalithamarisMBP:1.2.6.1 lalithajetty$ ls
+CHANGES.txt			README.txt
+INSTALL_RECEIPT.json		bin
+LICENSE.txt			homebrew.mxcl.hbase.plist
+NOTICE.txt			libexec
+LalithamarisMBP:1.2.6.1 lalithajetty$ cd bin
+LalithamarisMBP:bin lalithajetty$ start-hbase.sh
+master running as process 7573. Stop it first.
+LalithamarisMBP:bin lalithajetty$ ls
+hbase		start-hbase.sh	stop-hbase.sh
+LalithamarisMBP:bin lalithajetty$ stop-hbase.sh
+stopping hbase...........
+LalithamarisMBP:bin lalithajetty$ ls
+hbase		start-hbase.sh	stop-hbase.sh
+LalithamarisMBP:bin lalithajetty$ start-hbase.sh
+starting master, logging to /usr/local/var/log/hbase/hbase-lalithajetty-master-LalithamarisMBP.out
+LalithamarisMBP:bin lalithajetty$ hbase shell
+2018-06-16 17:24:32,222 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hbase/1.2.6.1/libexec/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hadoop/3.1.0/libexec/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 1.2.6.1, rUnknown, Sun Jun  3 23:19:26 CDT 2018
+
+hbase(main):001:0> create 'Table1', 'Location'
+
+ERROR: Table already exists: Table1!
+
+Here is some help for this command:
+Creates a table. Pass a table name, and a set of column family
+specifications (at least one), and, optionally, table configuration.
+Column specification can be a simple string (name), or a dictionary
+(dictionaries are described below in main help output), necessarily 
+including NAME attribute. 
+Examples:
+
+Create a table with namespace=ns1 and table qualifier=t1
+  hbase> create 'ns1:t1', {NAME => 'f1', VERSIONS => 5}
+
+Create a table with namespace=default and table qualifier=t1
+  hbase> create 't1', {NAME => 'f1'}, {NAME => 'f2'}, {NAME => 'f3'}
+  hbase> # The above in shorthand would be the following:
+  hbase> create 't1', 'f1', 'f2', 'f3'
+  hbase> create 't1', {NAME => 'f1', VERSIONS => 1, TTL => 2592000, BLOCKCACHE => true}
+  hbase> create 't1', {NAME => 'f1', CONFIGURATION => {'hbase.hstore.blockingStoreFiles' => '10'}}
+  
+Table configuration options can be put at the end.
+Examples:
+
+  hbase> create 'ns1:t1', 'f1', SPLITS => ['10', '20', '30', '40']
+  hbase> create 't1', 'f1', SPLITS => ['10', '20', '30', '40']
+  hbase> create 't1', 'f1', SPLITS_FILE => 'splits.txt', OWNER => 'johndoe'
+  hbase> create 't1', {NAME => 'f1', VERSIONS => 5}, METADATA => { 'mykey' => 'myvalue' }
+  hbase> # Optionally pre-split the table into NUMREGIONS, using
+  hbase> # SPLITALGO ("HexStringSplit", "UniformSplit" or classname)
+  hbase> create 't1', 'f1', {NUMREGIONS => 15, SPLITALGO => 'HexStringSplit'}
+  hbase> create 't1', 'f1', {NUMREGIONS => 15, SPLITALGO => 'HexStringSplit', REGION_REPLICATION => 2, CONFIGURATION => {'hbase.hregion.scan.loadColumnFamiliesOnDemand' => 'true'}}
+  hbase> create 't1', {NAME => 'f1', DFS_REPLICATION => 1}
+
+You can also keep around a reference to the created table:
+
+  hbase> t1 = create 't1', 'f1'
+
+Which gives you a reference to the table named 't1', on which you can then
+call methods.
+
+
+hbase(main):002:0> create 'Table01', 'Location'
+0 row(s) in 2.2690 seconds
+
+=> Hbase::Table - Table01
+hbase(main):003:0> put 'Table01', '1', 'Location : country' ,'USA'
+
+ERROR: Unknown column family! Valid column names: Location:*
+
+Here is some help for this command:
+Put a cell 'value' at specified table/row/column and optionally
+timestamp coordinates.  To put a cell value into table 'ns1:t1' or 't1'
+at row 'r1' under column 'c1' marked with the time 'ts1', do:
+
+  hbase> put 'ns1:t1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value', ts1
+  hbase> put 't1', 'r1', 'c1', 'value', {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {VISIBILITY=>'PRIVATE|SECRET'}
+
+The same commands also can be run on a table reference. Suppose you had a reference
+t to table 't1', the corresponding command would be:
+
+  hbase> t.put 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+
+
+hbase(main):004:0> put 'Table01', '1', 'Location:country' ,'USA'
+0 row(s) in 0.0200 seconds
+
+hbase(main):005:0> put 'Table01', '1', 'Location:state' , 'Illinois'
+0 row(s) in 0.0160 seconds
+
+hbase(main):006:0> put 'Table01', '1', 'Location:City', 'Chicago'
+0 row(s) in 0.0230 seconds
+
+hbase(main):007:0> put 'Table01', '2', 'Location:country' ,'USA'
+0 row(s) in 0.0140 seconds
+
+hbase(main):008:0> put 'Table01', '2', 'Location:state' , 'Missouri'
+0 row(s) in 0.0140 seconds
+
+hbase(main):009:0> put 'Table01', '2', 'Location:City', 'Kansas City'
+0 row(s) in 0.0130 seconds
+
+hbase(main):010:0> put 'Table01', '3', 'Location:country' ,'India'
+0 row(s) in 0.0140 seconds
+
+hbase(main):011:0> put 'Table01', '3', 'Location:state' , 'AP'
+0 row(s) in 0.0150 seconds
+
+hbase(main):012:0> put 'Table01', '3', 'Location:City', 'Vizag'
+0 row(s) in 0.0130 seconds
+
+hbase(main):013:0> scan 'Table01'
+ROW                   COLUMN+CELL                                               
+ 1                    column=Location:City, timestamp=1529188115042, value=Chica
+                      go                                                        
+ 1                    column=Location:country, timestamp=1529188011814, value=US
+                      A                                                         
+ 1                    column=Location:state, timestamp=1529188105655, value=Illi
+                      nois                                                      
+ 2                    column=Location:City, timestamp=1529188157008, value=Kansa
+                      s City                                                    
+ 2                    column=Location:country, timestamp=1529188138357, value=US
+                      A                                                         
+ 2                    column=Location:state, timestamp=1529188148186, value=Miss
+                      ouri                                                      
+ 3                    column=Location:City, timestamp=1529188186058, value=Vizag
+ 3                    column=Location:country, timestamp=1529188168328, value=In
+                      dia                                                       
+ 3                    column=Location:state, timestamp=1529188176612, value=AP  
+3 row(s) in 0.0330 seconds
+
+hbase(main):014:0> describe 'Table01'
+Table Table01 is ENABLED                                                        
+Table01                                                                         
+COLUMN FAMILIES DESCRIPTION                                                     
+{NAME => 'Location', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false'
+, KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER'
+, COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE =>
+ '65536', REPLICATION_SCOPE => '0'}                                             
+1 row(s) in 0.0320 seconds
+
+hbase(main):015:0> count 'Table01'
+3 row(s) in 0.0340 seconds
+
+=> 3
+hbase(main):016:0> get 'Table01','1'
+COLUMN                CELL                                                      
+ Location:City        timestamp=1529188115042, value=Chicago                    
+ Location:country     timestamp=1529188011814, value=USA                        
+ Location:state       timestamp=1529188105655, value=Illinois                   
+3 row(s) in 0.0260 seconds
+
+hbase(main):017:0> create 'Table2','Student','Courses'
+0 row(s) in 2.2670 seconds
+
+=> Hbase::Table - Table2
+hbase(main):018:0> put 'Table2', '1', 'Student:Name','Lalitha'
+0 row(s) in 0.0180 seconds
+
+hbase(main):019:0> put 'Table2', '1', 'Student:SEX', 'Female'
+0 row(s) in 0.0150 seconds
+
+hbase(main):020:0> put 'Table2', '1', 'Student:AGE', '20'
+0 row(s) in 0.0160 seconds
+
+hbase(main):021:0> put 'Table2', '2', 'Student:Name','Vinay'
+0 row(s) in 0.0140 seconds
+
+hbase(main):022:0> put 'Table2', '2', 'Student:SEX', 'Male'
+0 row(s) in 0.0160 seconds
+
+hbase(main):023:0> put 'Table2', '2', 'Student:AGE', '20'
+0 row(s) in 0.0150 seconds
+
+hbase(main):024:0> put 'Table2', '3', 'Student:Name','Raj'
+0 row(s) in 0.0140 seconds
+
+hbase(main):025:0> put 'Table2', '3', 'Student:SEX', 'Male'
+0 row(s) in 0.0140 seconds
+
+hbase(main):026:0> put 'Table2', '3', 'Student:AGE', '20'
+0 row(s) in 0.0160 seconds
+
+hbase(main):027:0> put 'Table2', '1', 'Courses : Course1','ISL'
+
+ERROR: Unknown column family! Valid column names: Courses:*, Student:*
+
+Here is some help for this command:
+Put a cell 'value' at specified table/row/column and optionally
+timestamp coordinates.  To put a cell value into table 'ns1:t1' or 't1'
+at row 'r1' under column 'c1' marked with the time 'ts1', do:
+
+  hbase> put 'ns1:t1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value', ts1
+  hbase> put 't1', 'r1', 'c1', 'value', {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {VISIBILITY=>'PRIVATE|SECRET'}
+
+The same commands also can be run on a table reference. Suppose you had a reference
+t to table 't1', the corresponding command would be:
+
+  hbase> t.put 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+
+
+hbase(main):028:0> put 'Table2', '1', 'Courses:Course1','ISL'
+0 row(s) in 0.0180 seconds
+
+hbase(main):029:0> put 'Table2', '1', 'Courses:Course2', 'Big Data'
+0 row(s) in 0.0130 seconds
+
+hbase(main):030:0> put 'Table2', '2', 'Courses:Course1','Python'
+0 row(s) in 0.0140 seconds
+
+hbase(main):031:0> put 'Table2', '2', 'Courses:Course2', 'ASE'
+0 row(s) in 0.0130 seconds
+
+hbase(main):032:0> put 'Table2', '3', 'Courses:Course1','Big Data'
+0 row(s) in 0.0140 seconds
+
+hbase(main):033:0> put 'Table2', '3', 'Courses:Course2', 'ISL'
+0 row(s) in 0.0120 seconds
+
+hbase(main):034:0> scan 'Table2'
+ROW                                                          COLUMN+CELL                                                                                                                                                                      
+ 1                                                           column=Courses:Course1, timestamp=1529188699534, value=ISL                                                                                                                       
+ 1                                                           column=Courses:Course2, timestamp=1529188710790, value=Big Data                                                                                                                  
+ 1                                                           column=Student:AGE, timestamp=1529188596361, value=20                                                                                                                            
+ 1                                                           column=Student:Name, timestamp=1529188577965, value=Lalitha                                                                                                                      
+ 1                                                           column=Student:SEX, timestamp=1529188586521, value=Female                                                                                                                        
+ 2                                                           column=Courses:Course1, timestamp=1529188718759, value=Python                                                                                                                    
+ 2                                                           column=Courses:Course2, timestamp=1529188726893, value=ASE                                                                                                                       
+ 2                                                           column=Student:AGE, timestamp=1529188622320, value=20                                                                                                                            
+ 2                                                           column=Student:Name, timestamp=1529188605600, value=Vinay                                                                                                                        
+ 2                                                           column=Student:SEX, timestamp=1529188613722, value=Male                                                                                                                          
+ 3                                                           column=Courses:Course1, timestamp=1529188736532, value=Big Data                                                                                                                  
+ 3                                                           column=Courses:Course2, timestamp=1529188745330, value=ISL                                                                                                                       
+ 3                                                           column=Student:AGE, timestamp=1529188646379, value=20                                                                                                                            
+ 3                                                           column=Student:Name, timestamp=1529188631565, value=Raj                                                                                                                          
+ 3                                                           column=Student:SEX, timestamp=1529188639025, value=Male                                                                                                                          
+3 row(s) in 0.0390 seconds
+
+hbase(main):035:0> describe 'Table2'
+Table Table2 is ENABLED                                                                                                                                                                                                                       
+Table2                                                                                                                                                                                                                                        
+COLUMN FAMILIES DESCRIPTION                                                                                                                                                                                                                   
+{NAME => 'Courses', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE =
+> '65536', REPLICATION_SCOPE => '0'}                                                                                                                                                                                                          
+{NAME => 'Student', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE =
+> '65536', REPLICATION_SCOPE => '0'}                                                                                                                                                                                                          
+2 row(s) in 0.0210 seconds
+
+hbase(main):036:0> count 'Table2'
+3 row(s) in 0.0180 seconds
+
+=> 3
+hbase(main):037:0> get_counter 'Table2','1','Name'
+
+ERROR: org.apache.hadoop.hbase.regionserver.NoSuchColumnFamilyException: Column family Name does not exist in region Table2,,1529188549075.ad1df20c8e87cda9d521d453921a22d2. in table 'Table2', {NAME => 'Courses', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}, {NAME => 'Student', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}
+	at org.apache.hadoop.hbase.regionserver.HRegion.checkFamily(HRegion.java:7763)
+	at org.apache.hadoop.hbase.regionserver.HRegion.get(HRegion.java:6802)
+	at org.apache.hadoop.hbase.regionserver.RSRpcServices.get(RSRpcServices.java:2049)
+	at org.apache.hadoop.hbase.protobuf.generated.ClientProtos$ClientService$2.callBlockingMethod(ClientProtos.java:33644)
+	at org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:2196)
+	at org.apache.hadoop.hbase.ipc.CallRunner.run(CallRunner.java:112)
+	at org.apache.hadoop.hbase.ipc.RpcExecutor.consumerLoop(RpcExecutor.java:133)
+	at org.apache.hadoop.hbase.ipc.RpcExecutor$1.run(RpcExecutor.java:108)
+	at java.lang.Thread.run(Thread.java:748)
+
+Here is some help for this command:
+Return a counter cell value at specified table/row/column coordinates.
+A counter cell should be managed with atomic increment functions on HBase
+and the data should be binary encoded (as long value). Example:
+
+  hbase> get_counter 'ns1:t1', 'r1', 'c1'
+  hbase> get_counter 't1', 'r1', 'c1'
+
+The same commands also can be run on a table reference. Suppose you had a reference
+t to table 't1', the corresponding command would be:
+
+  hbase> t.get_counter 'r1', 'c1'
+
+
+hbase(main):038:0> get_counter 'Table2','1','Student:Name'
+
+ERROR: offset (0) + length (8) exceed the capacity of the array: 7
+
+Here is some help for this command:
+Return a counter cell value at specified table/row/column coordinates.
+A counter cell should be managed with atomic increment functions on HBase
+and the data should be binary encoded (as long value). Example:
+
+  hbase> get_counter 'ns1:t1', 'r1', 'c1'
+  hbase> get_counter 't1', 'r1', 'c1'
+
+The same commands also can be run on a table reference. Suppose you had a reference
+t to table 't1', the corresponding command would be:
+
+  hbase> t.get_counter 'r1', 'c1'
+
+
+hbase(main):039:0> scan 'Table2'
+ROW                                                          COLUMN+CELL                                                                                                                                                                      
+ 1                                                           column=Courses:Course1, timestamp=1529188699534, value=ISL                                                                                                                       
+ 1                                                           column=Courses:Course2, timestamp=1529188710790, value=Big Data                                                                                                                  
+ 1                                                           column=Student:AGE, timestamp=1529188596361, value=20                                                                                                                            
+ 1                                                           column=Student:Name, timestamp=1529188577965, value=Lalitha                                                                                                                      
+ 1                                                           column=Student:SEX, timestamp=1529188586521, value=Female                                                                                                                        
+ 2                                                           column=Courses:Course1, timestamp=1529188718759, value=Python                                                                                                                    
+ 2                                                           column=Courses:Course2, timestamp=1529188726893, value=ASE                                                                                                                       
+ 2                                                           column=Student:AGE, timestamp=1529188622320, value=20                                                                                                                            
+ 2                                                           column=Student:Name, timestamp=1529188605600, value=Vinay                                                                                                                        
+ 2                                                           column=Student:SEX, timestamp=1529188613722, value=Male                                                                                                                          
+ 3                                                           column=Courses:Course1, timestamp=1529188736532, value=Big Data                                                                                                                  
+ 3                                                           column=Courses:Course2, timestamp=1529188745330, value=ISL                                                                                                                       
+ 3                                                           column=Student:AGE, timestamp=1529188646379, value=20                                                                                                                            
+ 3                                                           column=Student:Name, timestamp=1529188631565, value=Raj                                                                                                                          
+ 3                                                           column=Student:SEX, timestamp=1529188639025, value=Male                                                                                                                          
+3 row(s) in 0.0420 seconds
+
+hbase(main):040:0> describe 'Table2'
+Table Table2 is ENABLED                                                                                                                                                                                                                       
+Table2                                                                                                                                                                                                                                        
+COLUMN FAMILIES DESCRIPTION                                                                                                                                                                                                                   
+{NAME => 'Courses', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE =
+> '65536', REPLICATION_SCOPE => '0'}                                                                                                                                                                                                          
+{NAME => 'Student', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE =
+> '65536', REPLICATION_SCOPE => '0'}                                                                                                                                                                                                          
+2 row(s) in 0.0250 seconds
+
+hbase(main):041:0> count 'Table2'
+3 row(s) in 0.0160 seconds
+
+=> 3
+hbase(main):042:0> get 'Table2','2'
+COLUMN                                                       CELL                                                                                                                                                                             
+ Courses:Course1                                             timestamp=1529188718759, value=Python                                                                                                                                            
+ Courses:Course2                                             timestamp=1529188726893, value=ASE                                                                                                                                               
+ Student:AGE                                                 timestamp=1529188622320, value=20                                                                                                                                                
+ Student:Name                                                timestamp=1529188605600, value=Vinay                                                                                                                                             
+ Student:SEX                                                 timestamp=1529188613722, value=Male                                                                                                                                              
+5 row(s) in 0.0140 seconds
+
+hbase(main):043:0> create 'Table2b','CourseInfo','Student'
+0 row(s) in 2.2660 seconds
+
+=> Hbase::Table - Table2b
+hbase(main):044:0> put 'Table2b', '1', 'CourseInfo:Title','ISL'
+0 row(s) in 0.0190 seconds
+
+hbase(main):045:0> put 'Table2b', '1', 'CourseInfo:Intro', 'Statistical Learning'
+0 row(s) in 0.0150 seconds
+
+hbase(main):046:0> put 'Table2b', '1', 'CourseInfo:Teacher', 'Deep Medhi'
+0 row(s) in 0.0130 seconds
+
+hbase(main):047:0> put 'Table2b', '2', 'CourseInfo:Title','Python'
+0 row(s) in 0.0140 seconds
+
+hbase(main):048:0> put 'Table2b', '2', 'CourseInfo:Intro', 'Deep Learning'
+0 row(s) in 0.0140 seconds
+
+hbase(main):049:0> put 'Table2b', '2', 'CourseInfo:Teacher', 'Lee'
+0 row(s) in 0.0200 seconds
+
+hbase(main):050:0> put 'Table2b', '3', 'CourseInfo:Title','Big Data'
+0 row(s) in 0.0140 seconds
+
+hbase(main):051:0> put 'Table2b', '3', 'CourseInfo:Intro', 'Hadoop and spark'
+0 row(s) in 0.0140 seconds
+
+hbase(main):052:0> put 'Table2b', '3', 'CourseInfo:Teacher', 'Lee'
+0 row(s) in 0.0390 seconds
+
+hbase(main):053:0> put 'Table2b', '1', 'Student:Stu1','Lalitha'
+0 row(s) in 0.0140 seconds
+
+hbase(main):054:0> put 'Table2b', '1', 'Student:Stu2', 'Vardhini'
+0 row(s) in 0.0130 seconds
+
+hbase(main):055:0> put 'Table2b', '1', 'Student:Stu3', 'Sparshita'
+0 row(s) in 0.0170 seconds
+
+hbase(main):056:0> put 'Table2b', '2', 'Student:Stu1','Vardhini'
+0 row(s) in 0.0130 seconds
+
+hbase(main):057:0> put 'Table2b', '2', 'Student:Stu2', 'Sanjana'
+0 row(s) in 0.0140 seconds
+
+hbase(main):058:0> put 'Table2b', '2', 'Student:Stu3', 'Anjana'
+0 row(s) in 0.0130 seconds
+
+hbase(main):059:0> put 'Table2b', '3', 'Student:Stu1','Vardhini'
+0 row(s) in 0.0140 seconds
+
+hbase(main):060:0> put 'Table2b', '3', 'Student:Stu2', 'Anjana'
+0 row(s) in 0.0130 seconds
+
+hbase(main):061:0> put 'Table2b', '3', 'Student:Stu3', 'Vardhini'
+0 row(s) in 0.0120 seconds
+
+hbase(main):062:0> scan 'Table2b'
+ROW                                                          COLUMN+CELL                                                                                                                                                                      
+ 1                                                           column=CourseInfo:Intro, timestamp=1529189469867, value=Statistical Learning                                                                                                     
+ 1                                                           column=CourseInfo:Teacher, timestamp=1529189478052, value=Deep Medhi                                                                                                             
+ 1                                                           column=CourseInfo:Title, timestamp=1529189460879, value=ISL                                                                                                                      
+ 1                                                           column=Student:Stu1, timestamp=1529189543580, value=Lalitha                                                                                                                      
+ 1                                                           column=Student:Stu2, timestamp=1529189550746, value=Vardhini                                                                                                                     
+ 1                                                           column=Student:Stu3, timestamp=1529189558569, value=Sparshita                                                                                                                    
+ 2                                                           column=CourseInfo:Intro, timestamp=1529189499026, value=Deep Learning                                                                                                            
+ 2                                                           column=CourseInfo:Teacher, timestamp=1529189506746, value=Lee                                                                                                                    
+ 2                                                           column=CourseInfo:Title, timestamp=1529189486021, value=Python                                                                                                                   
+ 2                                                           column=Student:Stu1, timestamp=1529189565718, value=Vardhini                                                                                                                     
+ 2                                                           column=Student:Stu2, timestamp=1529189573088, value=Sanjana                                                                                                                      
+ 2                                                           column=Student:Stu3, timestamp=1529189581732, value=Anjana                                                                                                                       
+ 3                                                           column=CourseInfo:Intro, timestamp=1529189524753, value=Hadoop and spark                                                                                                         
+ 3                                                           column=CourseInfo:Teacher, timestamp=1529189532954, value=Lee                                                                                                                    
+ 3                                                           column=CourseInfo:Title, timestamp=1529189514700, value=Big Data                                                                                                                 
+ 3                                                           column=Student:Stu1, timestamp=1529189589384, value=Vardhini                                                                                                                     
+ 3                                                           column=Student:Stu2, timestamp=1529189596133, value=Anjana                                                                                                                       
+ 3                                                           column=Student:Stu3, timestamp=1529189605011, value=Vardhini                                                                                                                     
+3 row(s) in 0.0410 seconds
+
+hbase(main):063:0> count 'Table2b'
+3 row(s) in 0.0170 seconds
+
+=> 3
+hbase(main):064:0> get 'Table2b','2'
+COLUMN                                                       CELL                                                                                                                                                                             
+ CourseInfo:Intro                                            timestamp=1529189499026, value=Deep Learning                                                                                                                                     
+ CourseInfo:Teacher                                          timestamp=1529189506746, value=Lee                                                                                                                                               
+ CourseInfo:Title                                            timestamp=1529189486021, value=Python                                                                                                                                            
+ Student:Stu1                                                timestamp=1529189565718, value=Vardhini                                                                                                                                          
+ Student:Stu2                                                timestamp=1529189573088, value=Sanjana                                                                                                                                           
+ Student:Stu3                                                timestamp=1529189581732, value=Anjana                                                                                                                                            
+6 row(s) in 0.0140 seconds
+
+hbase(main):065:0> create 'Table3','UserDetails', 'EventDetails'
+0 row(s) in 1.2430 seconds
+
+=> Hbase::Table - Table3
+hbase(main):066:0> put 'Table2b', '1', 'UserDetails:UserID','111'
+
+ERROR: Unknown column family! Valid column names: CourseInfo:*, Student:*
+
+Here is some help for this command:
+Put a cell 'value' at specified table/row/column and optionally
+timestamp coordinates.  To put a cell value into table 'ns1:t1' or 't1'
+at row 'r1' under column 'c1' marked with the time 'ts1', do:
+
+  hbase> put 'ns1:t1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value', ts1
+  hbase> put 't1', 'r1', 'c1', 'value', {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {VISIBILITY=>'PRIVATE|SECRET'}
+
+The same commands also can be run on a table reference. Suppose you had a reference
+t to table 't1', the corresponding command would be:
+
+  hbase> t.put 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+
+
+hbase(main):067:0> put 'Table3', '1', 'UserDetails:UserID','111'
+0 row(s) in 0.0170 seconds
+
+hbase(main):068:0> put 'Table3', '1', 'UserDetails:Name', 'Lalitha'
+0 row(s) in 0.0130 seconds
+
+hbase(main):069:0> put 'Table3', '2', 'UserDetails:UserID','222'
+0 row(s) in 0.0150 seconds
+
+hbase(main):070:0> put 'Table3', '2', 'UserDetails:Name', 'Vinay'
+0 row(s) in 0.0160 seconds
+
+hbase(main):071:0> put 'Table3', '3', 'UserDetails:UserID','333'
+0 row(s) in 0.0170 seconds
+
+hbase(main):072:0> put 'Table3', '3', 'UserDetails:Name', 'Raj'
+0 row(s) in 0.0120 seconds
+
+hbase(main):073:0> put 'Table3', '1', 'EventDetails:EventID','001'
+0 row(s) in 0.0130 seconds
+
+hbase(main):074:0> put 'Table3', '1', 'EventDetails:Time', '11:00:00'
+0 row(s) in 0.0230 seconds
+
+hbase(main):075:0> put 'Table3', '2', 'EventDetails:EventID','002'
+0 row(s) in 0.0130 seconds
+
+hbase(main):076:0> put 'Table3', '2', 'EventDetails:Time', '12:00:00'
+0 row(s) in 0.0130 seconds
+
+hbase(main):077:0> put 'Table3', '3', 'EventDetails:EventID','003'
+0 row(s) in 0.0130 seconds
+
+hbase(main):078:0> put 'Table3', '3', 'EventDetails:Time', '15:00:00'
+0 row(s) in 0.0220 seconds
+
+hbase(main):079:0> Scan 'Table3'
+NoMethodError: undefined method `Scan' for #<Object:0x5d9618f2>
+
+hbase(main):080:0> scan 'Table3'
+ROW                                                          COLUMN+CELL                                                                                                                                                                      
+ 1                                                           column=EventDetails:EventID, timestamp=1529190191828, value=001                                                                                                                  
+ 1                                                           column=EventDetails:Time, timestamp=1529190200156, value=11:00:00                                                                                                                
+ 1                                                           column=UserDetails:Name, timestamp=1529190151950, value=Lalitha                                                                                                                  
+ 1                                                           column=UserDetails:UserID, timestamp=1529190144372, value=111                                                                                                                    
+ 2                                                           column=EventDetails:EventID, timestamp=1529190208292, value=002                                                                                                                  
+ 2                                                           column=EventDetails:Time, timestamp=1529190215630, value=12:00:00                                                                                                                
+ 2                                                           column=UserDetails:Name, timestamp=1529190168204, value=Vinay                                                                                                                    
+ 2                                                           column=UserDetails:UserID, timestamp=1529190160153, value=222                                                                                                                    
+ 3                                                           column=EventDetails:EventID, timestamp=1529190223021, value=003                                                                                                                  
+ 3                                                           column=EventDetails:Time, timestamp=1529190230397, value=15:00:00                                                                                                                
+ 3                                                           column=UserDetails:Name, timestamp=1529190184405, value=Raj                                                                                                                      
+ 3                                                           column=UserDetails:UserID, timestamp=1529190176228, value=333                                                                                                                    
+3 row(s) in 0.0200 seconds
+
+hbase(main):081:0> create 'Table4','User', 'Friends'
+0 row(s) in 1.2490 seconds
+
+=> Hbase::Table - Table4
+hbase(main):082:0> put 'Table4', '1', 'UserDetails:UserID','111'
+
+ERROR: Unknown column family! Valid column names: Friends:*, User:*
+
+Here is some help for this command:
+Put a cell 'value' at specified table/row/column and optionally
+timestamp coordinates.  To put a cell value into table 'ns1:t1' or 't1'
+at row 'r1' under column 'c1' marked with the time 'ts1', do:
+
+  hbase> put 'ns1:t1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value', ts1
+  hbase> put 't1', 'r1', 'c1', 'value', {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {VISIBILITY=>'PRIVATE|SECRET'}
+
+The same commands also can be run on a table reference. Suppose you had a reference
+t to table 't1', the corresponding command would be:
+
+  hbase> t.put 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+
+
+hbase(main):083:0> put 'Table4', '1', 'User:UserID','111'
+0 row(s) in 0.0160 seconds
+
+hbase(main):084:0> put 'Table4', '1', 'User:Name','Lalitha'
+0 row(s) in 0.0140 seconds
+
+hbase(main):085:0> put 'Table4', '2', 'User:UserID','222'
+0 row(s) in 0.0130 seconds
+
+hbase(main):086:0> put 'Table4', '2', 'User:Name','Vinay'
+0 row(s) in 0.0120 seconds
+
+hbase(main):087:0> put 'Table4', '3', 'User:UserID','333'
+0 row(s) in 0.0130 seconds
+
+hbase(main):088:0> put 'Table4', '3', 'User:Name','Raj'
+0 row(s) in 0.0120 seconds
+
+hbase(main):089:0> put 'Table4', '1', 'Friends:ID','001'
+0 row(s) in 0.0220 seconds
+
+hbase(main):090:0> put 'Table4', '1', 'Friends:Name','anjana'
+0 row(s) in 0.0130 seconds
+
+hbase(main):091:0> put 'Table4', '2', 'Friends:ID','002'
+0 row(s) in 0.0140 seconds
+
+hbase(main):092:0> put 'Table4', '2', 'Friends:Name','Sanjana'
+0 row(s) in 0.0130 seconds
+
+hbase(main):093:0> put 'Table4', '3', 'Friends:ID','003'
+0 row(s) in 0.0120 seconds
+
+hbase(main):094:0> put 'Table4', '3', 'Friends:Name','vardhini'
+0 row(s) in 0.0130 seconds
+
+hbase(main):095:0> scan 'Table4'
+ROW                                                          COLUMN+CELL                                                                                                                                                                      
+ 1                                                           column=Friends:ID, timestamp=1529190470273, value=001                                                                                                                            
+ 1                                                           column=Friends:Name, timestamp=1529190477221, value=anjana                                                                                                                       
+ 1                                                           column=User:Name, timestamp=1529190429020, value=Lalitha                                                                                                                         
+ 1                                                           column=User:UserID, timestamp=1529190421646, value=111                                                                                                                           
+ 2                                                           column=Friends:ID, timestamp=1529190483551, value=002                                                                                                                            
+ 2                                                           column=Friends:Name, timestamp=1529190489436, value=Sanjana                                                                                                                      
+ 2                                                           column=User:Name, timestamp=1529190447255, value=Vinay                                                                                                                           
+ 2                                                           column=User:UserID, timestamp=1529190438308, value=222                                                                                                                           
+ 3                                                           column=Friends:ID, timestamp=1529190495512, value=003                                                                                                                            
+ 3                                                           column=Friends:Name, timestamp=1529190502084, value=vardhini                                                                                                                     
+ 3                                                           column=User:Name, timestamp=1529190461397, value=Raj                                                                                                                             
+ 3                                                           column=User:UserID, timestamp=1529190454147, value=333                                                                                                                           
+3 row(s) in 0.0190 seconds
+
+hbase(main):096:0> create 'Table5','http','User'
+0 row(s) in 2.2500 seconds
+
+=> Hbase::Table - Table5
+hbase(main):097:0> put 'Table5', '1', 'http:IP','11.111.11.1'
+0 row(s) in 0.0180 seconds
+
+hbase(main):098:0> put 'Table5', '1', 'http:Domain', 'anjana'
+0 row(s) in 0.0140 seconds
+
+hbase(main):099:0> put 'Table5', '2', 'http:IP','22.222.22.2'
+0 row(s) in 0.0230 seconds
+
+hbase(main):100:0> put 'Table5', '2', 'http:Domain', 'Sanjana'
+0 row(s) in 0.0120 seconds
+
+hbase(main):101:0>  put 'Table5', '3', 'http:IP','33.333.33.3'
+0 row(s) in 0.0120 seconds
+
+hbase(main):102:0> put 'Table5', '3', 'http:Domain', 'vardhini'
+0 row(s) in 0.0130 seconds
+
+hbase(main):103:0> put 'Table5', '1', 'User:UserID','111'
+0 row(s) in 0.0130 seconds
+
+hbase(main):104:0> put 'Table5', '1', 'UserDetails:Name', 'Lalitha'
+
+ERROR: Unknown column family! Valid column names: User:*, http:*
+
+Here is some help for this command:
+Put a cell 'value' at specified table/row/column and optionally
+timestamp coordinates.  To put a cell value into table 'ns1:t1' or 't1'
+at row 'r1' under column 'c1' marked with the time 'ts1', do:
+
+  hbase> put 'ns1:t1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value', ts1
+  hbase> put 't1', 'r1', 'c1', 'value', {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {VISIBILITY=>'PRIVATE|SECRET'}
+
+The same commands also can be run on a table reference. Suppose you had a reference
+t to table 't1', the corresponding command would be:
+
+  hbase> t.put 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+
+
+hbase(main):105:0> put 'Table5', '1', 'User:Name', 'Lalitha'
+0 row(s) in 0.0170 seconds
+
+hbase(main):106:0> put 'Table5', '2', 'User:UserID','222'
+0 row(s) in 0.0130 seconds
+
+hbase(main):107:0> put 'Table5', '2', 'User:Name', 'Vinay'
+0 row(s) in 0.0130 seconds
+
+hbase(main):108:0>  put 'Table5', '3', 'User:UserID','333'
+0 row(s) in 0.0120 seconds
+
+hbase(main):109:0> put 'Table4', '3', 'User:Name', 'Raj'
+0 row(s) in 0.0120 seconds
+
+hbase(main):110:0> scan 'Table5'
+ROW                                                          COLUMN+CELL                                                                                                                                                                      
+ 1                                                           column=User:Name, timestamp=1529190817533, value=Lalitha                                                                                                                         
+ 1                                                           column=User:UserID, timestamp=1529190769515, value=111                                                                                                                           
+ 1                                                           column=http:Domain, timestamp=1529190733465, value=anjana                                                                                                                        
+ 1                                                           column=http:IP, timestamp=1529190725162, value=11.111.11.1                                                                                                                       
+ 2                                                           column=User:Name, timestamp=1529190830316, value=Vinay                                                                                                                           
+ 2                                                           column=User:UserID, timestamp=1529190823854, value=222                                                                                                                           
+ 2                                                           column=http:Domain, timestamp=1529190746472, value=Sanjana                                                                                                                       
+ 2                                                           column=http:IP, timestamp=1529190739956, value=22.222.22.2                                                                                                                       
+ 3                                                           column=User:UserID, timestamp=1529190837389, value=333                                                                                                                           
+ 3                                                           column=http:Domain, timestamp=1529190761161, value=vardhini                                                                                                                      
+ 3                                                           column=http:IP, timestamp=1529190754121, value=33.333.33.3                                                                                                                       
+3 row(s) in 0.0190 seconds
+
+hbase(main):111:0> list
+TABLE                                                                                                                                                                                                                                         
+Table01                                                                                                                                                                                                                                       
+Table1                                                                                                                                                                                                                                        
+Table2                                                                                                                                                                                                                                        
+Table2b                                                                                                                                                                                                                                       
+Table3                                                                                                                                                                                                                                        
+Table4                                                                                                                                                                                                                                        
+Table5                                                                                                                                                                                                                                        
+table                                                                                                                                                                                                                                         
+table1                                                                                                                                                                                                                                        
+9 row(s) in 0.0350 seconds
+
+=> ["Table01", "Table1", "Table2", "Table2b", "Table3", "Table4", "Table5", "table", "table1"]
+hbase(main):112:0> disable 'table'
+0 row(s) in 2.2740 seconds
+
+hbase(main):113:0> list
+TABLE                                                                                                                                                                                                                                         
+Table01                                                                                                                                                                                                                                       
+Table1                                                                                                                                                                                                                                        
+Table2                                                                                                                                                                                                                                        
+Table2b                                                                                                                                                                                                                                       
+Table3                                                                                                                                                                                                                                        
+Table4                                                                                                                                                                                                                                        
+Table5                                                                                                                                                                                                                                        
+table                                                                                                                                                                                                                                         
+table1                                                                                                                                                                                                                                        
+9 row(s) in 0.0110 seconds
+
+=> ["Table01", "Table1", "Table2", "Table2b", "Table3", "Table4", "Table5", "table", "table1"]
+hbase(main):114:0> drop 'table'
+0 row(s) in 1.2620 seconds
+
+hbase(main):115:0> list
+TABLE                                                                                                                                                                                                                                         
+Table01                                                                                                                                                                                                                                       
+Table1                                                                                                                                                                                                                                        
+Table2                                                                                                                                                                                                                                        
+Table2b                                                                                                                                                                                                                                       
+Table3                                                                                                                                                                                                                                        
+Table4                                                                                                                                                                                                                                        
+Table5                                                                                                                                                                                                                                        
+table1                                                                                                                                                                                                                                        
+8 row(s) in 0.0110 seconds
+
+=> ["Table01", "Table1", "Table2", "Table2b", "Table3", "Table4", "Table5", "table1"]
+hbase(main):116:0> disable 'TABLE'
+
+ERROR: Table TABLE does not exist.
+
+Here is some help for this command:
+Start disable of named table:
+  hbase> disable 't1'
+  hbase> disable 'ns1:t1'
+
+
+hbase(main):117:0> disable 'Table1'
+0 row(s) in 2.2590 seconds
+
+hbase(main):118:0> drop 'Table1'
+0 row(s) in 1.2390 seconds
+
+hbase(main):119:0> list
+TABLE                                                                                                                                                                                                                                         
+Table01                                                                                                                                                                                                                                       
+Table2                                                                                                                                                                                                                                        
+Table2b                                                                                                                                                                                                                                       
+Table3                                                                                                                                                                                                                                        
+Table4                                                                                                                                                                                                                                        
+Table5                                                                                                                                                                                                                                        
+table1                                                                                                                                                                                                                                        
+7 row(s) in 0.0120 seconds
+
+=> ["Table01", "Table2", "Table2b", "Table3", "Table4", "Table5", "table1"]
+hbase(main):120:0> disable 'table1'
+0 row(s) in 2.2410 seconds
+
+hbase(main):121:0> drop 'table1'
+0 row(s) in 1.2450 seconds
+
+hbase(main):122:0> list
+TABLE                                                                                                                                                                                                                                         
+Table01                                                                                                                                                                                                                                       
+Table2                                                                                                                                                                                                                                        
+Table2b                                                                                                                                                                                                                                       
+Table3                                                                                                                                                                                                                                        
+Table4                                                                                                                                                                                                                                        
+Table5                                                                                                                                                                                                                                        
+6 row(s) in 0.0110 seconds
+
+=> ["Table01", "Table2", "Table2b", "Table3", "Table4", "Table5"]
+hbase(main):123:0> 

@@ -1,0 +1,182 @@
+
+
+USECASE-1
+
+Creating a table with name Table01 and adding a column family Location which contains country, state and city columns
+
+> create 'Table01', 'Location'
+
+
+> put 'Table01', '1', 'Location:country' ,'USA'
+> put 'Table01', '1', 'Location:state' , 'Illinois'
+> put 'Table01', '1', 'Location:City', 'Chicago'
+> put 'Table01', '2', 'Location:country' ,'USA'
+> put 'Table01', '2', 'Location:state' , 'Missouri'
+> put 'Table01', '2', 'Location:City', 'Kansas City'
+> put 'Table01', '3', 'Location:country' ,'India'
+> put 'Table01', '3', 'Location:state' , 'AP'
+> put 'Table01', '3', 'Location:City', 'Vizag'
+
+scan 'Table1'
+describe 'Table01'
+count 'Table01'
+get 'Table01','1'
+
+USECASE-2
+
+
+Creating a table with name Table2 and adding a column family Student and Courses which contains Student details and courses enrolled by each student
+
+> create 'Table2','Student', 'Courses'
+
+> put 'Table2', '1', 'Student:Name','Lalitha'
+> put 'Table2', '1', 'Student:SEX', 'Female'
+> put 'Table2', '1', 'Student:AGE', '20'
+> put 'Table2', '2', 'Student:Name','Vinay'
+> put 'Table2', '2', 'Student:SEX', 'Male'
+> put 'Table2', '2', 'Student:AGE', '20'
+> put 'Table2', '3', 'Student:Name','Raj'
+> put 'Table2', '3', 'Student:SEX', 'Male'
+> put 'Table2', '3', 'Student:AGE', '20'
+
+
+> put 'Table2', '1', 'Courses:Course1','ISL'
+> put 'Table2', '1', 'Courses:Course2', 'Big Data'
+> put 'Table2', '2', 'Courses:Course1','Python'
+> put 'Table2', '2', 'Courses:Course2', 'ASE'
+> put 'Table2', '3', 'Courses:Course1','Big Data'
+> put 'Table2', '3', 'Courses:Course2', 'ISL'
+
+
+scan 'Table2'
+describe 'Table2'
+count 'Table2'
+get 'Table2','2' 
+
+Creating a table with name Table2b and adding a column family CourseInfo and Student which contains Course details and Students enrolled in each course
+
+> create 'Table2b','CourseInfo', 'Student'
+
+> put 'Table2b', '1', 'CourseInfo:Title','ISL'
+> put 'Table2b', '1', 'CourseInfo:Intro', 'Statistical Learning'
+> put 'Table2b', '1', 'CourseInfo:Teacher', 'Deep Medhi'
+> put 'Table2b', '2', 'CourseInfo:Title','Python'
+> put 'Table2b', '2', 'CourseInfo:Intro', 'Deep Learning'
+> put 'Table2b', '2', 'CourseInfo:Teacher', 'Lee'
+> put 'Table2b', '3', 'CourseInfo:Title','Big Data'
+> put 'Table2b', '3', 'CourseInfo:Intro', 'Hadoop and spark'
+> put 'Table2b', '3', 'CourseInfo:Teacher', 'Lee'
+
+> put 'Table2b', '1', 'Student:Stu1','Lalitha'
+> put 'Table2b', '1', 'Student:Stu2', 'Vardhini'
+> put 'Table2b', '1', 'Student:Stu3', 'Sparshita'
+> put 'Table2b', '2', 'Student:Stu1','Vardhini'
+> put 'Table2b', '2', 'Student:Stu2', 'Sanjana'
+> put 'Table2b', '2', 'Student:Stu3', 'Anjana'
+> put 'Table2b', '3', 'Student:Stu1','Vardhini'
+> put 'Table2b', '3', 'Student:Stu2', 'Anjana'
+> put 'Table2b', '3', 'Student:Stu3', 'Vardhini'
+
+
+scan 'Table2b'
+count 'Table2b'
+get 'Table2b','2'
+
+
+USECASE -3
+
+Creating a table with name Table3 and adding a column family UserDetails and EventDetails
+
+create 'Table3','UserDetails', 'EventDetails'
+
+> put 'Table3', '1', 'UserDetails:UserID','111'
+> put 'Table3', '1', 'UserDetails:Name', 'Lalitha'
+> put 'Table3', '2', 'UserDetails:UserID','222'
+> put 'Table3', '2', 'UserDetails:Name', 'Vinay'
+> put 'Table3', '3', 'UserDetails:UserID','333'
+> put 'Table3', '3', 'UserDetails:Name', 'Raj'
+
+> put 'Table3', '1', 'EventDetails:EventID','001'
+> put 'Table3', '1', 'EventDetails:Time', '11:00:00'
+> put 'Table3', '2', 'EventDetails:EventID','002'
+> put 'Table3', '2', 'EventDetails:Time', '12:00:00'
+> put 'Table3', '3', 'EventDetails:EventID','003'
+> put 'Table3', '3', 'EventDetails:Time', '15:00:00'
+
+Scan 'Table3'
+
+USECASE-4
+
+Creating a table with name Table3 and adding a column family User and Friends
+
+create 'Table4','User', 'Friends'
+
+> put 'Table4', '1', 'User:UserID','111'
+> put 'Table4', '1', 'User:Name','Lalitha'
+> put 'Table4', '2', 'User:UserID','222'
+> put 'Table4', '2', 'User:Name','Vinay'
+> put 'Table4', '3', 'User:UserID','333'
+> put 'Table4', '3', 'User:Name','Raj'
+
+> put 'Table4', '1', 'Friends:ID','001'
+> put 'Table4', '1', 'Friends:Name','anjana'
+> put 'Table4', '2', 'Friends:ID','002'
+> put 'Table4', '2', 'Friends:Name','Sanjana'
+> put 'Table4', '3', 'Friends:ID','003'
+> put 'Table4', '3', 'Friends:Name','vardhini'
+
+Scan 'Table4'
+
+USECASE-5
+
+Creating a table with name Table3 and adding a column family http and User
+
+create 'Table5','http','User'
+
+> put 'Table5', '1', 'http:IP','11.111.11.1'
+> put 'Table5', '1', 'http:Domain', 'anjana'
+> put 'Table5', '2', 'http:IP','22.222.22.2'
+> put 'Table5', '2', 'http:Domain', 'Sanjana'
+> put 'Table5', '3', 'http:IP','33.333.33.3'
+> put 'Table5', '3', 'http:Domain', 'vardhini'
+
+> put 'Table5', '1', 'User:UserID','111'
+> put 'Table5', '1', 'User:Name', 'Lalitha'
+> put 'Table5', '2', 'User:UserID','222'
+> put 'Table5', '2', 'User:Name', 'Vinay'
+> put 'Table5', '3', 'User:UserID','333'
+> put 'Table4', '3', 'User:Name', 'Raj'
+
+Use
+
+Question 2:
+
+status – shows the cluster status
+
+table_help – help on Table reference commands, scan, put, get, disable, drop etc.
+
+version – displays HBase version
+
+whoami – shows the current HBase user.
+
+
+describe 'Table01' 
+Above command returns all the details of the student table
+
+Disable 'student'
+Above command start disabling the student table
+
+Drop
+To drop the table present in HBase, first we have to disable it
+
+Drop 'student'
+This command will drop the student table
+
+Count 'student'
+The above command returns number of rows in student table
+
+Get 'student','lalitha' 
+The above command returns all the column values of the student Lalitha
+
+
+
