@@ -1,0 +1,637 @@
+Last login: Sat Jun 16 17:15:45 on ttys000
+Lalithakumaris-MacBook-Pro:~ lalithajetty$ source ~/.profile
+Lalithakumaris-MacBook-Pro:~ lalithajetty$ hstart
+WARNING: Attempting to start all Apache Hadoop daemons as lalithajetty in 10 seconds.
+WARNING: This is not a recommended production deployment configuration.
+WARNING: Use CTRL-C to abort.
+Starting namenodes on [localhost]
+localhost: namenode is running as process 9291.  Stop it first.
+Starting datanodes
+localhost: datanode is running as process 9386.  Stop it first.
+Starting secondary namenodes [Lalithakumaris-MacBook-Pro.local]
+Lalithakumaris-MacBook-Pro.local: Warning: Permanently added the ECDSA host key for IP address '10.99.1.9' to the list of known hosts.
+Lalithakumaris-MacBook-Pro.local: secondarynamenode is running as process 9503.  Stop it first.
+2018-06-18 10:38:18,503 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting resourcemanager
+resourcemanager is running as process 9646.  Stop it first.
+Starting nodemanagers
+localhost: nodemanager is running as process 9737.  Stop it first.
+Lalithakumaris-MacBook-Pro:~ lalithajetty$ hstop
+WARNING: Stopping all Apache Hadoop daemons as lalithajetty in 10 seconds.
+WARNING: Use CTRL-C to abort.
+Stopping namenodes on [localhost]
+Stopping datanodes
+Stopping secondary namenodes [Lalithakumaris-MacBook-Pro.local]
+2018-06-18 10:38:55,747 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Stopping nodemanagers
+Stopping resourcemanager
+Lalithakumaris-MacBook-Pro:~ lalithajetty$ jps
+15033 Jps
+13546 Launcher
+12955 
+Lalithakumaris-MacBook-Pro:~ lalithajetty$ source ~/.profile
+Lalithakumaris-MacBook-Pro:~ lalithajetty$ hstart
+WARNING: Attempting to start all Apache Hadoop daemons as lalithajetty in 10 seconds.
+WARNING: This is not a recommended production deployment configuration.
+WARNING: Use CTRL-C to abort.
+Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes [Lalithakumaris-MacBook-Pro.local]
+2018-06-18 10:39:55,795 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting resourcemanager
+Starting nodemanagers
+Lalithakumaris-MacBook-Pro:~ lalithajetty$ jps
+15552 ResourceManager
+15409 SecondaryNameNode
+15702 Jps
+15191 NameNode
+15289 DataNode
+13546 Launcher
+12955 
+15646 NodeManager
+Lalithakumaris-MacBook-Pro:~ lalithajetty$ cd /usr/local/cellar/hbase/1.2.6.1
+Lalithakumaris-MacBook-Pro:1.2.6.1 lalithajetty$ pwd
+/usr/local/cellar/hbase/1.2.6.1
+Lalithakumaris-MacBook-Pro:1.2.6.1 lalithajetty$ ls
+CHANGES.txt			README.txt
+INSTALL_RECEIPT.json		bin
+LICENSE.txt			homebrew.mxcl.hbase.plist
+NOTICE.txt			libexec
+Lalithakumaris-MacBook-Pro:1.2.6.1 lalithajetty$ cd bin
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ ls
+hbase		start-hbase.sh	stop-hbase.sh
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ start-hbase.sh
+starting master, logging to /usr/local/var/log/hbase/hbase-lalithajetty-master-Lalithakumaris-MacBook-Pro.local.out
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ hbase shell
+2018-06-18 10:41:08,154 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hbase/1.2.6.1/libexec/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hadoop/3.1.0/libexec/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 1.2.6.1, rUnknown, Sun Jun  3 23:19:26 CDT 2018
+
+hbase(main):001:0> list
+TABLE                                                                           
+Table01                                                                         
+Table2                                                                          
+Table2b                                                                         
+Table3                                                                          
+Table4                                                                          
+Table5                                                                          
+6 row(s) in 0.1820 seconds
+
+=> ["Table01", "Table2", "Table2b", "Table3", "Table4", "Table5"]
+hbase(main):002:0> create 'Course_by_Learner', 'LearnerDetails','CourseDetails'
+0 row(s) in 2.3000 seconds
+
+=> Hbase::Table - Course_by_Learner
+hbase(main):003:0> put 'Course_by_Learner', '1', 'LearnerDetails:LearnerID’ ,’111’
+hbase(main):004:0' put 'Course_by_Learner', '1', 'LearnerDetails:LearnerName’ ,’Lalitha’
+SyntaxError: (hbase):4: syntax error, unexpected tCONSTANT
+
+put 'Course_by_Learner', '1', 'LearnerDetails:LearnerName
+                     ^
+
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ start-hbase.sh
+master running as process 15834. Stop it first.
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ stop-hbase.sh
+stopping hbase.............
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ pwd
+/usr/local/cellar/hbase/1.2.6.1/bin
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ start-hbase.sh
+starting master, logging to /usr/local/var/log/hbase/hbase-lalithajetty-master-Lalithakumaris-MacBook-Pro.local.out
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ hbase shell
+2018-06-18 10:55:35,145 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hbase/1.2.6.1/libexec/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hadoop/3.1.0/libexec/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 1.2.6.1, rUnknown, Sun Jun  3 23:19:26 CDT 2018
+
+hbase(main):001:0> list
+TABLE                                                                                         
+Course_by_Learner                                                                             
+Table01                                                                                       
+Table2                                                                                        
+Table2b                                                                                       
+Table3                                                                                        
+Table4                                                                                        
+Table5                                                                                        
+7 row(s) in 0.1680 seconds
+
+=> ["Course_by_Learner", "Table01", "Table2", "Table2b", "Table3", "Table4", "Table5"]
+hbase(main):002:0> put 'Course_by_Learner', '1', 'LearnerDetails:LearnerID’ ,’111’
+hbase(main):003:0' create table
+hbase(main):004:0' help
+hbase(main):005:0' 
+hbase(main):006:0' 
+hbase(main):007:0' 
+hbase(main):008:0' 
+hbase(main):009:0' exit
+hbase(main):010:0' stop-hbase.sh
+hbase(main):011:0' put 'Course_by_Learner', '1', 'LearnerDetails:LearnerID’ ,’111’
+SyntaxError: (hbase):11: syntax error, unexpected tCONSTANT
+
+put 'Course_by_Learner', '1', 'LearnerDetails:LearnerID
+                     ^
+
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ stop-hbase.sh
+stopping hbase..............
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ start-hbase.sh
+starting master, logging to /usr/local/var/log/hbase/hbase-lalithajetty-master-Lalithakumaris-MacBook-Pro.local.out
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ hbase shell
+2018-06-18 11:00:16,345 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hbase/1.2.6.1/libexec/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hadoop/3.1.0/libexec/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 1.2.6.1, rUnknown, Sun Jun  3 23:19:26 CDT 2018
+
+hbase(main):001:0> list
+TABLE                                                                                         
+Course_by_Learner                                                                             
+Table01                                                                                       
+Table2                                                                                        
+Table2b                                                                                       
+Table3                                                                                        
+Table4                                                                                        
+Table5                                                                                        
+7 row(s) in 0.1570 seconds
+
+=> ["Course_by_Learner", "Table01", "Table2", "Table2b", "Table3", "Table4", "Table5"]
+hbase(main):002:0> create 'Coursera','LearnerDetails','CourseDetails'
+0 row(s) in 2.3200 seconds
+
+=> Hbase::Table - Coursera
+hbase(main):003:0> put 'Coursera’, '1', 'LearnerDetails:LearnerID’ ,’111’
+SyntaxError: (hbase):3: syntax error, unexpected tINTEGER
+
+put 'Courseraâ, '1', 'LearnerDetails:LearnerID
+                   ^
+
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ stop-hbase.sh
+stopping hbase.....................
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ start-hbase.sh
+starting master, logging to /usr/local/var/log/hbase/hbase-lalithajetty-master-Lalithakumaris-MacBook-Pro.local.out
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ hbase shell
+2018-06-18 11:05:19,373 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hbase/1.2.6.1/libexec/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hadoop/3.1.0/libexec/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 1.2.6.1, rUnknown, Sun Jun  3 23:19:26 CDT 2018
+
+hbase(main):001:0> list
+TABLE                                                                                         
+Course_by_Learner                                                                             
+Coursera                                                                                      
+Table01                                                                                       
+Table2                                                                                        
+Table2b                                                                                       
+Table3                                                                                        
+Table4                                                                                        
+Table5                                                                                        
+8 row(s) in 0.1790 seconds
+
+=> ["Course_by_Learner", "Coursera", "Table01", "Table2", "Table2b", "Table3", "Table4", "Table5"]
+hbase(main):002:0> put 'coursera', '1', 'LearnerDetails:LearnerID', '111'
+2018-06-18 11:06:11,455 ERROR [main] client.AsyncProcess: Failed to get region location 
+org.apache.hadoop.hbase.TableNotFoundException: Table 'coursera' was not found, got: Table5.
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1300)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1181)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:410)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:359)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:238)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:190)
+	at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1434)
+	at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1018)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jruby.javasupport.JavaMethod.invokeDirectWithExceptionHandling(JavaMethod.java:450)
+	at org.jruby.javasupport.JavaMethod.invokeDirect(JavaMethod.java:311)
+	at org.jruby.java.invokers.InstanceMethodInvoker.call(InstanceMethodInvoker.java:59)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:312)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:169)
+	at org.jruby.ast.CallOneArgNode.interpret(CallOneArgNode.java:57)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:120)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:134)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:174)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:282)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:71)
+	at org.jruby.ast.CallManyArgsNode.interpret(CallManyArgsNode.java:59)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_BLOCK(ASTInterpreter.java:111)
+	at org.jruby.runtime.InterpretedBlock.evalBlockBody(InterpretedBlock.java:374)
+	at org.jruby.runtime.InterpretedBlock.yield(InterpretedBlock.java:295)
+	at org.jruby.runtime.InterpretedBlock.yieldSpecific(InterpretedBlock.java:229)
+	at org.jruby.runtime.Block.yieldSpecific(Block.java:99)
+	at org.jruby.ast.ZYieldNode.interpret(ZYieldNode.java:25)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:169)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:191)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:302)
+	at org.jruby.runtime.callsite.CachingCallSite.callBlock(CachingCallSite.java:144)
+	at org.jruby.runtime.callsite.CachingCallSite.callIter(CachingCallSite.java:153)
+	at org.jruby.ast.FCallNoArgBlockNode.interpret(FCallNoArgBlockNode.java:32)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:120)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:134)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:174)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:282)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:71)
+	at org.jruby.ast.FCallManyArgsNode.interpret(FCallManyArgsNode.java:60)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:120)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:165)
+	at org.jruby.RubyClass.finvoke(RubyClass.java:573)
+	at org.jruby.RubyBasicObject.send(RubyBasicObject.java:2801)
+	at org.jruby.RubyKernel.send(RubyKernel.java:2117)
+	at org.jruby.RubyKernel$s$send.call(RubyKernel$s$send.gen:65535)
+	at org.jruby.internal.runtime.methods.DynamicMethod.call(DynamicMethod.java:181)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:282)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:71)
+	at org.jruby.ast.FCallSpecialArgNode.interpret(FCallSpecialArgNode.java:45)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_BLOCK(ASTInterpreter.java:111)
+	at org.jruby.runtime.InterpretedBlock.evalBlockBody(InterpretedBlock.java:374)
+	at org.jruby.runtime.InterpretedBlock.yield(InterpretedBlock.java:295)
+	at org.jruby.runtime.InterpretedBlock.yieldSpecific(InterpretedBlock.java:229)
+	at org.jruby.runtime.Block.yieldSpecific(Block.java:99)
+	at org.jruby.ast.ZYieldNode.interpret(ZYieldNode.java:25)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.RescueNode.executeBody(RescueNode.java:216)
+	at org.jruby.ast.RescueNode.interpretWithJavaExceptions(RescueNode.java:120)
+	at org.jruby.ast.RescueNode.interpret(RescueNode.java:110)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:120)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:165)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:272)
+	at org.jruby.runtime.callsite.CachingCallSite.callBlock(CachingCallSite.java:80)
+	at org.jruby.runtime.callsite.CachingCallSite.callIter(CachingCallSite.java:89)
+	at org.jruby.ast.FCallSpecialArgBlockNode.interpret(FCallSpecialArgBlockNode.java:42)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.RescueNode.executeBody(RescueNode.java:216)
+	at org.jruby.ast.RescueNode.interpretWithJavaExceptions(RescueNode.java:120)
+	at org.jruby.ast.RescueNode.interpret(RescueNode.java:110)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:120)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:134)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:174)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:282)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:71)
+	at org.jruby.ast.CallSpecialArgNode.interpret(CallSpecialArgNode.java:73)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:120)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:134)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:174)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:69)
+	at org.jruby.ast.FCallSpecialArgNode.interpret(FCallSpecialArgNode.java:45)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:120)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:134)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:174)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:282)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:71)
+	at org.jruby.ast.CallSpecialArgNode.interpret(CallSpecialArgNode.java:73)
+	at org.jruby.ast.LocalAsgnNode.interpret(LocalAsgnNode.java:123)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:120)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:134)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:174)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:282)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:71)
+	at org.jruby.ast.FCallManyArgsNode.interpret(FCallManyArgsNode.java:60)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.RootNode.interpret(RootNode.java:129)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_EVAL(ASTInterpreter.java:95)
+	at org.jruby.evaluator.ASTInterpreter.evalWithBinding(ASTInterpreter.java:166)
+	at org.jruby.RubyKernel.evalCommon(RubyKernel.java:1155)
+	at org.jruby.RubyKernel.eval(RubyKernel.java:1112)
+	at org.jruby.RubyKernel$s$0$3$eval.call(RubyKernel$s$0$3$eval.gen:65535)
+	at org.jruby.internal.runtime.methods.DynamicMethod.call(DynamicMethod.java:181)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:69)
+	at org.jruby.ast.FCallManyArgsNode.interpret(FCallManyArgsNode.java:60)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:120)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:134)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:174)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:69)
+	at org.jruby.ast.CallManyArgsNode.interpret(CallManyArgsNode.java:59)
+	at org.jruby.ast.FCallOneArgNode.interpret(FCallOneArgNode.java:36)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:233)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:215)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:201)
+	at org.jruby.ast.CallTwoArgNode.interpret(CallTwoArgNode.java:59)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.ast.RescueNode.executeBody(RescueNode.java:216)
+	at org.jruby.ast.RescueNode.interpretWithJavaExceptions(RescueNode.java:120)
+	at org.jruby.ast.RescueNode.interpret(RescueNode.java:110)
+	at org.jruby.ast.BeginNode.interpret(BeginNode.java:83)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_BLOCK(ASTInterpreter.java:111)
+	at org.jruby.runtime.InterpretedBlock.evalBlockBody(InterpretedBlock.java:374)
+	at org.jruby.runtime.InterpretedBlock.yield(InterpretedBlock.java:295)
+	at org.jruby.runtime.InterpretedBlock.yieldSpecific(InterpretedBlock.java:229)
+	at org.jruby.runtime.Block.yieldSpecific(Block.java:99)
+	at org.jruby.ast.ZYieldNode.interpret(ZYieldNode.java:25)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.EnsureNode.interpret(EnsureNode.java:96)
+	at org.jruby.ast.BeginNode.interpret(BeginNode.java:83)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:212)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:207)
+	at org.jruby.runtime.callsite.CachingCallSite.callBlock(CachingCallSite.java:176)
+	at org.jruby.runtime.callsite.CachingCallSite.callIter(CachingCallSite.java:187)
+	at org.jruby.ast.FCallOneArgBlockNode.interpret(FCallOneArgBlockNode.java:34)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_BLOCK(ASTInterpreter.java:111)
+	at org.jruby.runtime.InterpretedBlock.evalBlockBody(InterpretedBlock.java:374)
+	at org.jruby.runtime.InterpretedBlock.yieldSpecific(InterpretedBlock.java:260)
+	at org.jruby.runtime.Block.yieldSpecific(Block.java:117)
+	at org.jruby.ast.YieldTwoNode.interpret(YieldTwoNode.java:31)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.IfNode.interpret(IfNode.java:117)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.ast.RescueNode.executeBody(RescueNode.java:216)
+	at org.jruby.ast.RescueNode.interpretWithJavaExceptions(RescueNode.java:120)
+	at org.jruby.ast.RescueNode.interpret(RescueNode.java:110)
+	at org.jruby.ast.BeginNode.interpret(BeginNode.java:83)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_BLOCK(ASTInterpreter.java:111)
+	at org.jruby.runtime.InterpretedBlock.evalBlockBody(InterpretedBlock.java:374)
+	at org.jruby.runtime.InterpretedBlock.yield(InterpretedBlock.java:295)
+	at org.jruby.runtime.InterpretedBlock.yieldSpecific(InterpretedBlock.java:229)
+	at org.jruby.runtime.Block.yieldSpecific(Block.java:99)
+	at org.jruby.RubyKernel.loop(RubyKernel.java:1439)
+	at org.jruby.RubyKernel$s$0$0$loop.call(RubyKernel$s$0$0$loop.gen:65535)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:302)
+	at org.jruby.runtime.callsite.CachingCallSite.callBlock(CachingCallSite.java:144)
+	at org.jruby.runtime.callsite.CachingCallSite.callIter(CachingCallSite.java:153)
+	at org.jruby.ast.FCallNoArgBlockNode.interpret(FCallNoArgBlockNode.java:32)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_BLOCK(ASTInterpreter.java:111)
+	at org.jruby.runtime.InterpretedBlock.evalBlockBody(InterpretedBlock.java:374)
+	at org.jruby.runtime.InterpretedBlock.yield(InterpretedBlock.java:347)
+	at org.jruby.runtime.InterpretedBlock.yield(InterpretedBlock.java:304)
+	at org.jruby.runtime.Block.yield(Block.java:130)
+	at org.jruby.RubyContinuation.enter(RubyContinuation.java:106)
+	at org.jruby.RubyKernel.rbCatch(RubyKernel.java:1212)
+	at org.jruby.RubyKernel$s$1$0$rbCatch.call(RubyKernel$s$1$0$rbCatch.gen:65535)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:322)
+	at org.jruby.runtime.callsite.CachingCallSite.callBlock(CachingCallSite.java:178)
+	at org.jruby.runtime.callsite.CachingCallSite.callIter(CachingCallSite.java:187)
+	at org.jruby.ast.FCallOneArgBlockNode.interpret(FCallOneArgBlockNode.java:34)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:169)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:191)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:302)
+	at org.jruby.runtime.callsite.CachingCallSite.callBlock(CachingCallSite.java:144)
+	at org.jruby.runtime.callsite.CachingCallSite.callIter(CachingCallSite.java:153)
+	at org.jruby.ast.CallNoArgBlockNode.interpret(CallNoArgBlockNode.java:64)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:104)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:147)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:183)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:292)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:135)
+	at usr.local.Cellar.hbase.$1_dot_2_dot_6_dot_1.libexec.bin.$_dot_dot_.bin.hirb.block_2$RUBY$start(/usr/local/Cellar/hbase/1.2.6.1/libexec/bin/../bin/hirb.rb:205)
+	at usr$local$Cellar$hbase$$1_dot_2_dot_6_dot_1$libexec$bin$$_dot_dot_$bin$hirb$block_2$RUBY$start.call(usr$local$Cellar$hbase$$1_dot_2_dot_6_dot_1$libexec$bin$$_dot_dot_$bin$hirb$block_2$RUBY$start:65535)
+	at org.jruby.runtime.CompiledBlock.yield(CompiledBlock.java:112)
+	at org.jruby.runtime.CompiledBlock.yield(CompiledBlock.java:95)
+	at org.jruby.runtime.Block.yield(Block.java:130)
+	at org.jruby.RubyContinuation.enter(RubyContinuation.java:106)
+	at org.jruby.RubyKernel.rbCatch(RubyKernel.java:1212)
+	at org.jruby.RubyKernel$s$1$0$rbCatch.call(RubyKernel$s$1$0$rbCatch.gen:65535)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:322)
+	at org.jruby.runtime.callsite.CachingCallSite.callBlock(CachingCallSite.java:178)
+	at org.jruby.runtime.callsite.CachingCallSite.callIter(CachingCallSite.java:187)
+	at usr.local.Cellar.hbase.$1_dot_2_dot_6_dot_1.libexec.bin.$_dot_dot_.bin.hirb.method__5$RUBY$start(/usr/local/Cellar/hbase/1.2.6.1/libexec/bin/../bin/hirb.rb:204)
+	at usr$local$Cellar$hbase$$1_dot_2_dot_6_dot_1$libexec$bin$$_dot_dot_$bin$hirb$method__5$RUBY$start.call(usr$local$Cellar$hbase$$1_dot_2_dot_6_dot_1$libexec$bin$$_dot_dot_$bin$hirb$method__5$RUBY$start:65535)
+	at org.jruby.internal.runtime.methods.DynamicMethod.call(DynamicMethod.java:203)
+	at org.jruby.internal.runtime.methods.CompiledMethod.call(CompiledMethod.java:255)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:292)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:135)
+	at usr.local.Cellar.hbase.$1_dot_2_dot_6_dot_1.libexec.bin.$_dot_dot_.bin.hirb.__file__(/usr/local/Cellar/hbase/1.2.6.1/libexec/bin/../bin/hirb.rb:210)
+	at usr.local.Cellar.hbase.$1_dot_2_dot_6_dot_1.libexec.bin.$_dot_dot_.bin.hirb.load(/usr/local/Cellar/hbase/1.2.6.1/libexec/bin/../bin/hirb.rb)
+	at org.jruby.Ruby.runScript(Ruby.java:697)
+	at org.jruby.Ruby.runScript(Ruby.java:690)
+	at org.jruby.Ruby.runNormally(Ruby.java:597)
+	at org.jruby.Ruby.runFromMain(Ruby.java:446)
+	at org.jruby.Main.doRunFromMain(Main.java:369)
+	at org.jruby.Main.internalRun(Main.java:258)
+	at org.jruby.Main.run(Main.java:224)
+	at org.jruby.Main.run(Main.java:208)
+	at org.jruby.Main.main(Main.java:188)
+
+ERROR: Failed 1 action: Table 'coursera' was not found, got: Table5.: 1 time, 
+
+Here is some help for this command:
+Put a cell 'value' at specified table/row/column and optionally
+timestamp coordinates.  To put a cell value into table 'ns1:t1' or 't1'
+at row 'r1' under column 'c1' marked with the time 'ts1', do:
+
+  hbase> put 'ns1:t1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value'
+  hbase> put 't1', 'r1', 'c1', 'value', ts1
+  hbase> put 't1', 'r1', 'c1', 'value', {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+  hbase> put 't1', 'r1', 'c1', 'value', ts1, {VISIBILITY=>'PRIVATE|SECRET'}
+
+The same commands also can be run on a table reference. Suppose you had a reference
+t to table 't1', the corresponding command would be:
+
+  hbase> t.put 'r1', 'c1', 'value', ts1, {ATTRIBUTES=>{'mykey'=>'myvalue'}}
+
+
+hbase(main):003:0> list
+TABLE                                                                                         
+Course_by_Learner                                                                             
+Coursera                                                                                      
+Table01                                                                                       
+Table2                                                                                        
+Table2b                                                                                       
+Table3                                                                                        
+Table4                                                                                        
+Table5                                                                                        
+8 row(s) in 0.0250 seconds
+
+=> ["Course_by_Learner", "Coursera", "Table01", "Table2", "Table2b", "Table3", "Table4", "Table5"]
+hbase(main):004:0> put 'Coursera’, '1', 'LearnerDetails:LearnerID’, ’111’
+SyntaxError: (hbase):4: syntax error, unexpected tINTEGER
+
+put 'Courseraâ, '1', 'LearnerDetails:LearnerID
+                   ^
+
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ stop-hbase.sh
+stopping hbase................
+Lalithakumaris-MacBook-Pro:bin lalithajetty$ start-hbase.sh
+hbasstarting master, logging to /usr/local/var/log/hbase/hbase-lalithajetty-master-Lalithakumaris-MacBook-Pro.local.out
+eLalithakumaris-MacBook-Pro:bin lalithajetty$ hbase shell
+2018-06-18 11:08:49,177 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hbase/1.2.6.1/libexec/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/Cellar/hadoop/3.1.0/libexec/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 1.2.6.1, rUnknown, Sun Jun  3 23:19:26 CDT 2018
+
+hbase(main):001:0> list
+TABLE                                                                                         
+Course_by_Learner                                                                             
+Coursera                                                                                      
+Table01                                                                                       
+Table2                                                                                        
+Table2b                                                                                       
+Table3                                                                                        
+Table4                                                                                        
+Table5                                                                                        
+8 row(s) in 0.1670 seconds
+
+=> ["Course_by_Learner", "Coursera", "Table01", "Table2", "Table2b", "Table3", "Table4", "Table5"]
+hbase(main):002:0> put 'Coursera','1','LearnerDetails:LearnerID','111'
+0 row(s) in 0.1420 seconds
+
+hbase(main):003:0> put 'Coursera','1','LearnerDetails:LearnerName','Lalitha'
+0 row(s) in 0.0060 seconds
+
+hbase(main):004:0> put 'Coursera','2','LearnerDetails:LearnerID','222'
+0 row(s) in 0.0130 seconds
+
+hbase(main):005:0> put 'Coursera','2','LearnerDetails:LearnerName','Vinay'
+0 row(s) in 0.0150 seconds
+
+hbase(main):006:0> put 'Coursera','1','CourseDetails:CourseID','ML001'
+0 row(s) in 0.0130 seconds
+
+hbase(main):007:0> put 'Coursera','1','CourseDetails:CourseNmae','Machine Learning'
+0 row(s) in 0.0130 seconds
+
+hbase(main):008:0> put 'Coursera','2','CourseDetails:CourseID','DL001'
+0 row(s) in 0.0140 seconds
+
+hbase(main):009:0> put 'Coursera','2','CourseDetails:CourseNmae','Deep Learning'
+0 row(s) in 0.0120 seconds
+
+hbase(main):010:0> scan 'Coursera'
+ROW                      COLUMN+CELL                                                          
+ 1                       column=CourseDetails:CourseID, timestamp=1529338279039, value=ML001  
+ 1                       column=CourseDetails:CourseNmae, timestamp=1529338303231, value=Machi
+                         ne Learning                                                          
+ 1                       column=LearnerDetails:LearnerID, timestamp=1529338169506, value=111  
+ 1                       column=LearnerDetails:LearnerName, timestamp=1529338203282, value=Lal
+                         itha                                                                 
+ 2                       column=CourseDetails:CourseID, timestamp=1529338325494, value=DL001  
+ 2                       column=CourseDetails:CourseNmae, timestamp=1529338345631, value=Deep 
+                         Learning                                                             
+ 2                       column=LearnerDetails:LearnerID, timestamp=1529338223445, value=222  
+ 2                       column=LearnerDetails:LearnerName, timestamp=1529338245320, value=Vin
+                         ay                                                                   
+2 row(s) in 0.0320 seconds
+
+hbase(main):011:0> get 'coursera','1'
+COLUMN                                                       CELL                                                                                                                                                                             
+
+ERROR: Unknown table coursera!
+
+Here is some help for this command:
+Get row or cell contents; pass table name, row, and optionally
+a dictionary of column(s), timestamp, timerange and versions. Examples:
+
+  hbase> get 'ns1:t1', 'r1'
+  hbase> get 't1', 'r1'
+  hbase> get 't1', 'r1', {TIMERANGE => [ts1, ts2]}
+  hbase> get 't1', 'r1', {COLUMN => 'c1'}
+  hbase> get 't1', 'r1', {COLUMN => ['c1', 'c2', 'c3']}
+  hbase> get 't1', 'r1', {COLUMN => 'c1', TIMESTAMP => ts1}
+  hbase> get 't1', 'r1', {COLUMN => 'c1', TIMERANGE => [ts1, ts2], VERSIONS => 4}
+  hbase> get 't1', 'r1', {COLUMN => 'c1', TIMESTAMP => ts1, VERSIONS => 4}
+  hbase> get 't1', 'r1', {FILTER => "ValueFilter(=, 'binary:abc')"}
+  hbase> get 't1', 'r1', 'c1'
+  hbase> get 't1', 'r1', 'c1', 'c2'
+  hbase> get 't1', 'r1', ['c1', 'c2']
+  hbase> get 't1', 'r1', {COLUMN => 'c1', ATTRIBUTES => {'mykey'=>'myvalue'}}
+  hbase> get 't1', 'r1', {COLUMN => 'c1', AUTHORIZATIONS => ['PRIVATE','SECRET']}
+  hbase> get 't1', 'r1', {CONSISTENCY => 'TIMELINE'}
+  hbase> get 't1', 'r1', {CONSISTENCY => 'TIMELINE', REGION_REPLICA_ID => 1}
+
+Besides the default 'toStringBinary' format, 'get' also supports custom formatting by
+column.  A user can define a FORMATTER by adding it to the column name in the get
+specification.  The FORMATTER can be stipulated: 
+
+ 1. either as a org.apache.hadoop.hbase.util.Bytes method name (e.g, toInt, toString)
+ 2. or as a custom class followed by method name: e.g. 'c(MyFormatterClass).format'.
+
+Example formatting cf:qualifier1 and cf:qualifier2 both as Integers: 
+  hbase> get 't1', 'r1' {COLUMN => ['cf:qualifier1:toInt',
+    'cf:qualifier2:c(org.apache.hadoop.hbase.util.Bytes).toInt'] } 
+
+Note that you can specify a FORMATTER by column only (cf:qualifier).  You cannot specify
+a FORMATTER for all columns of a column family.
+    
+The same commands also can be run on a reference to a table (obtained via get_table or
+create_table). Suppose you had a reference t to table 't1', the corresponding commands
+would be:
+
+  hbase> t.get 'r1'
+  hbase> t.get 'r1', {TIMERANGE => [ts1, ts2]}
+  hbase> t.get 'r1', {COLUMN => 'c1'}
+  hbase> t.get 'r1', {COLUMN => ['c1', 'c2', 'c3']}
+  hbase> t.get 'r1', {COLUMN => 'c1', TIMESTAMP => ts1}
+  hbase> t.get 'r1', {COLUMN => 'c1', TIMERANGE => [ts1, ts2], VERSIONS => 4}
+  hbase> t.get 'r1', {COLUMN => 'c1', TIMESTAMP => ts1, VERSIONS => 4}
+  hbase> t.get 'r1', {FILTER => "ValueFilter(=, 'binary:abc')"}
+  hbase> t.get 'r1', 'c1'
+  hbase> t.get 'r1', 'c1', 'c2'
+  hbase> t.get 'r1', ['c1', 'c2']
+  hbase> t.get 'r1', {CONSISTENCY => 'TIMELINE'}
+  hbase> t.get 'r1', {CONSISTENCY => 'TIMELINE', REGION_REPLICA_ID => 1}
+
+
+hbase(main):012:0> get 'Coursera','1'
+COLUMN                                                       CELL                                                                                                                                                                             
+ CourseDetails:CourseID                                      timestamp=1529338279039, value=ML001                                                                                                                                             
+ CourseDetails:CourseNmae                                    timestamp=1529338303231, value=Machine Learning                                                                                                                                  
+ LearnerDetails:LearnerID                                    timestamp=1529338169506, value=111                                                                                                                                               
+ LearnerDetails:LearnerName                                  timestamp=1529338203282, value=Lalitha                                                                                                                                           
+4 row(s) in 0.0170 seconds
+
+hbase(main):013:0> 

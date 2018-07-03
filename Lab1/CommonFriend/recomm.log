@@ -1,0 +1,385 @@
+02:40:27,949  WARN main NativeCodeLoader:<clinit>:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+02:40:28,110  INFO main deprecation:warnOnceIfDeprecated:840 - session.id is deprecated. Instead, use dfs.metrics.session-id
+02:40:28,111  INFO main JvmMetrics:init:76 - Initializing JVM Metrics with processName=JobTracker, sessionId=
+02:40:28,130  INFO main JvmMetrics:init:71 - Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+02:40:28,139 ERROR main UserGroupInformation:doAs:1494 - PriviledgedActionException as:lalithajetty (auth:SIMPLE) cause:org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/Output already exists
+02:40:28,140 ERROR main UserGroupInformation:doAs:1494 - PriviledgedActionException as:lalithajetty (auth:SIMPLE) cause:org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/Output already exists
+02:42:07,261  WARN main NativeCodeLoader:<clinit>:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+02:42:07,446  INFO main deprecation:warnOnceIfDeprecated:840 - session.id is deprecated. Instead, use dfs.metrics.session-id
+02:42:07,447  INFO main JvmMetrics:init:76 - Initializing JVM Metrics with processName=JobTracker, sessionId=
+02:42:07,471  INFO main JvmMetrics:init:71 - Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+02:42:07,759  WARN main JobSubmitter:copyAndConfigureFiles:149 - Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+02:42:07,766  WARN main JobSubmitter:copyAndConfigureFiles:258 - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+02:42:07,783  INFO main FileInputFormat:listStatus:253 - Total input paths to process : 1
+02:42:07,827  INFO main JobSubmitter:submitJobInternal:394 - number of splits:1
+02:42:07,850  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.job.name is deprecated. Instead, use mapreduce.job.name
+02:42:07,850  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.input.dir is deprecated. Instead, use mapreduce.input.fileinputformat.inputdir
+02:42:07,851  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.value.class is deprecated. Instead, use mapreduce.job.output.value.class
+02:42:07,851  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+02:42:07,852  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.working.dir is deprecated. Instead, use mapreduce.job.working.dir
+02:42:07,852  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+02:42:07,852  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+02:42:07,853  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.mapoutput.key.class is deprecated. Instead, use mapreduce.map.output.key.class
+02:42:07,854  INFO main deprecation:warnOnceIfDeprecated:840 - user.name is deprecated. Instead, use mapreduce.job.user.name
+02:42:07,855  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.key.class is deprecated. Instead, use mapreduce.job.output.key.class
+02:42:07,956  INFO main JobSubmitter:printTokens:477 - Submitting tokens for job: job_local1799815113_0001
+02:42:07,998  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/staging/lalithajetty1799815113/.staging/job_local1799815113_0001/job.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+02:42:07,998  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/staging/lalithajetty1799815113/.staging/job_local1799815113_0001/job.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+02:42:08,076  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/local/localRunner/lalithajetty/job_local1799815113_0001/job_local1799815113_0001.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+02:42:08,076  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/local/localRunner/lalithajetty/job_local1799815113_0001/job_local1799815113_0001.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+02:42:08,081  INFO main Job:submit:1272 - The url to track the job: http://localhost:8080/
+02:42:08,082  INFO Thread-10 LocalJobRunner:createOutputCommitter:323 - OutputCommitter set in config null
+02:42:08,084  INFO main Job:monitorAndPrintJob:1317 - Running job: job_local1799815113_0001
+02:42:08,084  INFO Thread-10 LocalJobRunner:createOutputCommitter:341 - OutputCommitter is org.apache.hadoop.mapred.FileOutputCommitter
+02:42:08,108  INFO Thread-10 LocalJobRunner:run:389 - Waiting for map tasks
+02:42:08,110  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:run:216 - Starting task: attempt_local1799815113_0001_m_000000_0
+02:42:08,131  INFO LocalJobRunner Map Task Executor #0 ProcfsBasedProcessTree:isAvailable:129 - ProcfsBasedProcessTree currently is supported only on Linux.
+02:42:08,131  INFO LocalJobRunner Map Task Executor #0 Task:initialize:581 -  Using ResourceCalculatorProcessTree : null
+02:42:08,136  INFO LocalJobRunner Map Task Executor #0 MapTask:updateJobWithSplit:461 - Processing split: file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/input.txt:0+55
+02:42:08,141  INFO LocalJobRunner Map Task Executor #0 MapTask:runOldMapper:415 - numReduceTasks: 1
+02:42:08,145  INFO LocalJobRunner Map Task Executor #0 MapTask:createSortingCollector:387 - Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+02:42:08,211  INFO LocalJobRunner Map Task Executor #0 MapTask:setEquator:1183 - (EQUATOR) 0 kvi 26214396(104857584)
+02:42:08,212  INFO LocalJobRunner Map Task Executor #0 MapTask:init:975 - mapreduce.task.io.sort.mb: 100
+02:42:08,212  INFO LocalJobRunner Map Task Executor #0 MapTask:init:976 - soft limit at 83886080
+02:42:08,212  INFO LocalJobRunner Map Task Executor #0 MapTask:init:977 - bufstart = 0; bufvoid = 104857600
+02:42:08,212  INFO LocalJobRunner Map Task Executor #0 MapTask:init:978 - kvstart = 26214396; length = 6553600
+02:42:08,222  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:statusUpdate:513 - 
+02:42:08,222  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1440 - Starting flush of map output
+02:42:08,222  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1459 - Spilling map output
+02:42:08,222  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1460 - bufstart = 0; bufend = 204; bufvoid = 104857600
+02:42:08,223  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1462 - kvstart = 26214396(104857584); kvend = 26214328(104857312); length = 69/6553600
+02:42:08,232  INFO LocalJobRunner Map Task Executor #0 MapTask:sortAndSpill:1648 - Finished spill 0
+02:42:08,236  INFO LocalJobRunner Map Task Executor #0 Task:done:995 - Task:attempt_local1799815113_0001_m_000000_0 is done. And is in the process of committing
+02:42:08,241  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:statusUpdate:513 - file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/input.txt:0+55
+02:42:08,242  INFO LocalJobRunner Map Task Executor #0 Task:sendDone:1115 - Task 'attempt_local1799815113_0001_m_000000_0' done.
+02:42:08,242  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:run:241 - Finishing task: attempt_local1799815113_0001_m_000000_0
+02:42:08,242  INFO Thread-10 LocalJobRunner:run:397 - Map task executor complete.
+02:42:08,252  INFO Thread-10 ProcfsBasedProcessTree:isAvailable:129 - ProcfsBasedProcessTree currently is supported only on Linux.
+02:42:08,252  INFO Thread-10 Task:initialize:581 -  Using ResourceCalculatorProcessTree : null
+02:42:08,256  INFO Thread-10 Merger:merge:568 - Merging 1 sorted segments
+02:42:08,275  INFO Thread-10 Merger:merge:667 - Down to the last merge-pass, with 1 segments left of total size: 236 bytes
+02:42:08,276  INFO Thread-10 LocalJobRunner:statusUpdate:513 - 
+02:42:08,289  INFO Thread-10 Task:done:995 - Task:attempt_local1799815113_0001_r_000000_0 is done. And is in the process of committing
+02:42:08,290  INFO Thread-10 LocalJobRunner:statusUpdate:513 - 
+02:42:08,291  INFO Thread-10 Task:commit:1156 - Task attempt_local1799815113_0001_r_000000_0 is allowed to commit now
+02:42:08,291  INFO Thread-10 FileOutputCommitter:commitTask:439 - Saved output of task 'attempt_local1799815113_0001_r_000000_0' to file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/Output/_temporary/0/task_local1799815113_0001_r_000000
+02:42:08,292  INFO Thread-10 LocalJobRunner:statusUpdate:513 - reduce > reduce
+02:42:08,292  INFO Thread-10 Task:sendDone:1115 - Task 'attempt_local1799815113_0001_r_000000_0' done.
+02:42:09,087  INFO main Job:monitorAndPrintJob:1338 - Job job_local1799815113_0001 running in uber mode : false
+02:42:09,089  INFO main Job:monitorAndPrintJob:1345 -  map 100% reduce 100%
+02:42:09,091  INFO main Job:monitorAndPrintJob:1356 - Job job_local1799815113_0001 completed successfully
+02:42:09,099  INFO main Job:monitorAndPrintJob:1363 - Counters: 24
+	File System Counters
+		FILE: Number of bytes read=786
+		FILE: Number of bytes written=386250
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=5
+		Map output records=18
+		Map output bytes=204
+		Map output materialized bytes=246
+		Input split bytes=161
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=9
+		Reduce shuffle bytes=0
+		Reduce input records=18
+		Reduce output records=9
+		Spilled Records=36
+		Shuffled Maps =0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=514850816
+	File Input Format Counters 
+		Bytes Read=55
+	File Output Format Counters 
+		Bytes Written=90
+02:44:12,558  WARN main NativeCodeLoader:<clinit>:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+02:44:12,732  INFO main deprecation:warnOnceIfDeprecated:840 - session.id is deprecated. Instead, use dfs.metrics.session-id
+02:44:12,733  INFO main JvmMetrics:init:76 - Initializing JVM Metrics with processName=JobTracker, sessionId=
+02:44:12,758  INFO main JvmMetrics:init:71 - Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+02:44:12,770 ERROR main UserGroupInformation:doAs:1494 - PriviledgedActionException as:lalithajetty (auth:SIMPLE) cause:org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/Output already exists
+02:44:12,771 ERROR main UserGroupInformation:doAs:1494 - PriviledgedActionException as:lalithajetty (auth:SIMPLE) cause:org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/Output already exists
+02:44:31,878  WARN main NativeCodeLoader:<clinit>:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+02:44:32,058  INFO main deprecation:warnOnceIfDeprecated:840 - session.id is deprecated. Instead, use dfs.metrics.session-id
+02:44:32,059  INFO main JvmMetrics:init:76 - Initializing JVM Metrics with processName=JobTracker, sessionId=
+02:44:32,081  INFO main JvmMetrics:init:71 - Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+02:44:32,376  WARN main JobSubmitter:copyAndConfigureFiles:149 - Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+02:44:32,382  WARN main JobSubmitter:copyAndConfigureFiles:258 - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+02:44:32,397  INFO main FileInputFormat:listStatus:253 - Total input paths to process : 1
+02:44:32,447  INFO main JobSubmitter:submitJobInternal:394 - number of splits:1
+02:44:32,466  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.job.name is deprecated. Instead, use mapreduce.job.name
+02:44:32,466  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.input.dir is deprecated. Instead, use mapreduce.input.fileinputformat.inputdir
+02:44:32,467  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.value.class is deprecated. Instead, use mapreduce.job.output.value.class
+02:44:32,467  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+02:44:32,467  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.working.dir is deprecated. Instead, use mapreduce.job.working.dir
+02:44:32,468  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+02:44:32,468  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+02:44:32,468  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.mapoutput.key.class is deprecated. Instead, use mapreduce.map.output.key.class
+02:44:32,470  INFO main deprecation:warnOnceIfDeprecated:840 - user.name is deprecated. Instead, use mapreduce.job.user.name
+02:44:32,471  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.key.class is deprecated. Instead, use mapreduce.job.output.key.class
+02:44:32,552  INFO main JobSubmitter:printTokens:477 - Submitting tokens for job: job_local1642018777_0001
+02:44:32,593  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/staging/lalithajetty1642018777/.staging/job_local1642018777_0001/job.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+02:44:32,594  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/staging/lalithajetty1642018777/.staging/job_local1642018777_0001/job.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+02:44:32,687  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/local/localRunner/lalithajetty/job_local1642018777_0001/job_local1642018777_0001.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+02:44:32,687  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/local/localRunner/lalithajetty/job_local1642018777_0001/job_local1642018777_0001.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+02:44:32,694  INFO main Job:submit:1272 - The url to track the job: http://localhost:8080/
+02:44:32,696  INFO Thread-10 LocalJobRunner:createOutputCommitter:323 - OutputCommitter set in config null
+02:44:32,697  INFO main Job:monitorAndPrintJob:1317 - Running job: job_local1642018777_0001
+02:44:32,697  INFO Thread-10 LocalJobRunner:createOutputCommitter:341 - OutputCommitter is org.apache.hadoop.mapred.FileOutputCommitter
+02:44:32,721  INFO Thread-10 LocalJobRunner:run:389 - Waiting for map tasks
+02:44:32,723  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:run:216 - Starting task: attempt_local1642018777_0001_m_000000_0
+02:44:32,745  INFO LocalJobRunner Map Task Executor #0 ProcfsBasedProcessTree:isAvailable:129 - ProcfsBasedProcessTree currently is supported only on Linux.
+02:44:32,746  INFO LocalJobRunner Map Task Executor #0 Task:initialize:581 -  Using ResourceCalculatorProcessTree : null
+02:44:32,751  INFO LocalJobRunner Map Task Executor #0 MapTask:updateJobWithSplit:461 - Processing split: file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/input.txt:0+55
+02:44:32,756  INFO LocalJobRunner Map Task Executor #0 MapTask:runOldMapper:415 - numReduceTasks: 1
+02:44:32,760  INFO LocalJobRunner Map Task Executor #0 MapTask:createSortingCollector:387 - Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+02:44:32,829  INFO LocalJobRunner Map Task Executor #0 MapTask:setEquator:1183 - (EQUATOR) 0 kvi 26214396(104857584)
+02:44:32,829  INFO LocalJobRunner Map Task Executor #0 MapTask:init:975 - mapreduce.task.io.sort.mb: 100
+02:44:32,829  INFO LocalJobRunner Map Task Executor #0 MapTask:init:976 - soft limit at 83886080
+02:44:32,829  INFO LocalJobRunner Map Task Executor #0 MapTask:init:977 - bufstart = 0; bufvoid = 104857600
+02:44:32,829  INFO LocalJobRunner Map Task Executor #0 MapTask:init:978 - kvstart = 26214396; length = 6553600
+02:44:32,841  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:statusUpdate:513 - 
+02:44:32,841  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1440 - Starting flush of map output
+02:44:32,841  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1459 - Spilling map output
+02:44:32,841  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1460 - bufstart = 0; bufend = 204; bufvoid = 104857600
+02:44:32,842  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1462 - kvstart = 26214396(104857584); kvend = 26214328(104857312); length = 69/6553600
+02:44:32,851  INFO LocalJobRunner Map Task Executor #0 MapTask:sortAndSpill:1648 - Finished spill 0
+02:44:32,854  INFO LocalJobRunner Map Task Executor #0 Task:done:995 - Task:attempt_local1642018777_0001_m_000000_0 is done. And is in the process of committing
+02:44:32,860  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:statusUpdate:513 - file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/input.txt:0+55
+02:44:32,860  INFO LocalJobRunner Map Task Executor #0 Task:sendDone:1115 - Task 'attempt_local1642018777_0001_m_000000_0' done.
+02:44:32,860  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:run:241 - Finishing task: attempt_local1642018777_0001_m_000000_0
+02:44:32,860  INFO Thread-10 LocalJobRunner:run:397 - Map task executor complete.
+02:44:32,871  INFO Thread-10 ProcfsBasedProcessTree:isAvailable:129 - ProcfsBasedProcessTree currently is supported only on Linux.
+02:44:32,871  INFO Thread-10 Task:initialize:581 -  Using ResourceCalculatorProcessTree : null
+02:44:32,876  INFO Thread-10 Merger:merge:568 - Merging 1 sorted segments
+02:44:32,892  INFO Thread-10 Merger:merge:667 - Down to the last merge-pass, with 1 segments left of total size: 236 bytes
+02:44:32,893  INFO Thread-10 LocalJobRunner:statusUpdate:513 - 
+02:44:32,909  INFO Thread-10 Task:done:995 - Task:attempt_local1642018777_0001_r_000000_0 is done. And is in the process of committing
+02:44:32,910  INFO Thread-10 LocalJobRunner:statusUpdate:513 - 
+02:44:32,910  INFO Thread-10 Task:commit:1156 - Task attempt_local1642018777_0001_r_000000_0 is allowed to commit now
+02:44:32,911  INFO Thread-10 FileOutputCommitter:commitTask:439 - Saved output of task 'attempt_local1642018777_0001_r_000000_0' to file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/Output/_temporary/0/task_local1642018777_0001_r_000000
+02:44:32,912  INFO Thread-10 LocalJobRunner:statusUpdate:513 - reduce > reduce
+02:44:32,912  INFO Thread-10 Task:sendDone:1115 - Task 'attempt_local1642018777_0001_r_000000_0' done.
+02:44:33,703  INFO main Job:monitorAndPrintJob:1338 - Job job_local1642018777_0001 running in uber mode : false
+02:44:33,704  INFO main Job:monitorAndPrintJob:1345 -  map 100% reduce 100%
+02:44:33,707  INFO main Job:monitorAndPrintJob:1356 - Job job_local1642018777_0001 completed successfully
+02:44:33,715  INFO main Job:monitorAndPrintJob:1363 - Counters: 24
+	File System Counters
+		FILE: Number of bytes read=786
+		FILE: Number of bytes written=386217
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=5
+		Map output records=18
+		Map output bytes=204
+		Map output materialized bytes=246
+		Input split bytes=161
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=9
+		Reduce shuffle bytes=0
+		Reduce input records=18
+		Reduce output records=9
+		Spilled Records=36
+		Shuffled Maps =0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=514850816
+	File Input Format Counters 
+		Bytes Read=55
+	File Output Format Counters 
+		Bytes Written=57
+02:45:18,886  WARN main NativeCodeLoader:<clinit>:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+02:45:19,065  INFO main deprecation:warnOnceIfDeprecated:840 - session.id is deprecated. Instead, use dfs.metrics.session-id
+02:45:19,066  INFO main JvmMetrics:init:76 - Initializing JVM Metrics with processName=JobTracker, sessionId=
+02:45:19,089  INFO main JvmMetrics:init:71 - Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+02:45:19,362  WARN main JobSubmitter:copyAndConfigureFiles:149 - Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+02:45:19,368  WARN main JobSubmitter:copyAndConfigureFiles:258 - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+02:45:19,386  INFO main FileInputFormat:listStatus:253 - Total input paths to process : 1
+02:45:19,435  INFO main JobSubmitter:submitJobInternal:394 - number of splits:1
+02:45:19,456  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.job.name is deprecated. Instead, use mapreduce.job.name
+02:45:19,456  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.input.dir is deprecated. Instead, use mapreduce.input.fileinputformat.inputdir
+02:45:19,457  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.value.class is deprecated. Instead, use mapreduce.job.output.value.class
+02:45:19,457  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+02:45:19,458  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.working.dir is deprecated. Instead, use mapreduce.job.working.dir
+02:45:19,458  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+02:45:19,458  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+02:45:19,459  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.mapoutput.key.class is deprecated. Instead, use mapreduce.map.output.key.class
+02:45:19,460  INFO main deprecation:warnOnceIfDeprecated:840 - user.name is deprecated. Instead, use mapreduce.job.user.name
+02:45:19,460  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.key.class is deprecated. Instead, use mapreduce.job.output.key.class
+02:45:19,548  INFO main JobSubmitter:printTokens:477 - Submitting tokens for job: job_local489607205_0001
+02:45:19,586  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/staging/lalithajetty489607205/.staging/job_local489607205_0001/job.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+02:45:19,586  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/staging/lalithajetty489607205/.staging/job_local489607205_0001/job.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+02:45:19,681  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/local/localRunner/lalithajetty/job_local489607205_0001/job_local489607205_0001.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+02:45:19,682  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/local/localRunner/lalithajetty/job_local489607205_0001/job_local489607205_0001.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+02:45:19,687  INFO main Job:submit:1272 - The url to track the job: http://localhost:8080/
+02:45:19,688  INFO Thread-10 LocalJobRunner:createOutputCommitter:323 - OutputCommitter set in config null
+02:45:19,689  INFO main Job:monitorAndPrintJob:1317 - Running job: job_local489607205_0001
+02:45:19,689  INFO Thread-10 LocalJobRunner:createOutputCommitter:341 - OutputCommitter is org.apache.hadoop.mapred.FileOutputCommitter
+02:45:19,714  INFO Thread-10 LocalJobRunner:run:389 - Waiting for map tasks
+02:45:19,718  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:run:216 - Starting task: attempt_local489607205_0001_m_000000_0
+02:45:19,745  INFO LocalJobRunner Map Task Executor #0 ProcfsBasedProcessTree:isAvailable:129 - ProcfsBasedProcessTree currently is supported only on Linux.
+02:45:19,745  INFO LocalJobRunner Map Task Executor #0 Task:initialize:581 -  Using ResourceCalculatorProcessTree : null
+02:45:19,751  INFO LocalJobRunner Map Task Executor #0 MapTask:updateJobWithSplit:461 - Processing split: file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/input.txt:0+55
+02:45:19,756  INFO LocalJobRunner Map Task Executor #0 MapTask:runOldMapper:415 - numReduceTasks: 1
+02:45:19,761  INFO LocalJobRunner Map Task Executor #0 MapTask:createSortingCollector:387 - Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+02:45:19,831  INFO LocalJobRunner Map Task Executor #0 MapTask:setEquator:1183 - (EQUATOR) 0 kvi 26214396(104857584)
+02:45:19,831  INFO LocalJobRunner Map Task Executor #0 MapTask:init:975 - mapreduce.task.io.sort.mb: 100
+02:45:19,831  INFO LocalJobRunner Map Task Executor #0 MapTask:init:976 - soft limit at 83886080
+02:45:19,831  INFO LocalJobRunner Map Task Executor #0 MapTask:init:977 - bufstart = 0; bufvoid = 104857600
+02:45:19,831  INFO LocalJobRunner Map Task Executor #0 MapTask:init:978 - kvstart = 26214396; length = 6553600
+02:45:19,839  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:statusUpdate:513 - 
+02:45:19,839  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1440 - Starting flush of map output
+02:45:19,840  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1459 - Spilling map output
+02:45:19,840  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1460 - bufstart = 0; bufend = 204; bufvoid = 104857600
+02:45:19,840  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1462 - kvstart = 26214396(104857584); kvend = 26214328(104857312); length = 69/6553600
+02:45:19,851  INFO LocalJobRunner Map Task Executor #0 MapTask:sortAndSpill:1648 - Finished spill 0
+02:45:19,854  INFO LocalJobRunner Map Task Executor #0 Task:done:995 - Task:attempt_local489607205_0001_m_000000_0 is done. And is in the process of committing
+02:45:19,864  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:statusUpdate:513 - file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/input.txt:0+55
+02:45:19,864  INFO LocalJobRunner Map Task Executor #0 Task:sendDone:1115 - Task 'attempt_local489607205_0001_m_000000_0' done.
+02:45:19,864  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:run:241 - Finishing task: attempt_local489607205_0001_m_000000_0
+02:45:19,865  INFO Thread-10 LocalJobRunner:run:397 - Map task executor complete.
+02:45:19,875  INFO Thread-10 ProcfsBasedProcessTree:isAvailable:129 - ProcfsBasedProcessTree currently is supported only on Linux.
+02:45:19,875  INFO Thread-10 Task:initialize:581 -  Using ResourceCalculatorProcessTree : null
+02:45:19,879  INFO Thread-10 Merger:merge:568 - Merging 1 sorted segments
+02:45:19,899  INFO Thread-10 Merger:merge:667 - Down to the last merge-pass, with 1 segments left of total size: 236 bytes
+02:45:19,900  INFO Thread-10 LocalJobRunner:statusUpdate:513 - 
+02:45:19,920  INFO Thread-10 Task:done:995 - Task:attempt_local489607205_0001_r_000000_0 is done. And is in the process of committing
+02:45:19,921  INFO Thread-10 LocalJobRunner:statusUpdate:513 - 
+02:45:19,922  INFO Thread-10 Task:commit:1156 - Task attempt_local489607205_0001_r_000000_0 is allowed to commit now
+02:45:19,923  INFO Thread-10 FileOutputCommitter:commitTask:439 - Saved output of task 'attempt_local489607205_0001_r_000000_0' to file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/Output/_temporary/0/task_local489607205_0001_r_000000
+02:45:19,923  INFO Thread-10 LocalJobRunner:statusUpdate:513 - reduce > reduce
+02:45:19,923  INFO Thread-10 Task:sendDone:1115 - Task 'attempt_local489607205_0001_r_000000_0' done.
+02:45:20,696  INFO main Job:monitorAndPrintJob:1338 - Job job_local489607205_0001 running in uber mode : false
+02:45:20,704  INFO main Job:monitorAndPrintJob:1345 -  map 100% reduce 100%
+02:45:20,706  INFO main Job:monitorAndPrintJob:1356 - Job job_local489607205_0001 completed successfully
+02:45:20,714  INFO main Job:monitorAndPrintJob:1363 - Counters: 24
+	File System Counters
+		FILE: Number of bytes read=786
+		FILE: Number of bytes written=384270
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=5
+		Map output records=18
+		Map output bytes=204
+		Map output materialized bytes=246
+		Input split bytes=161
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=9
+		Reduce shuffle bytes=0
+		Reduce input records=18
+		Reduce output records=9
+		Spilled Records=36
+		Shuffled Maps =0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=514850816
+	File Input Format Counters 
+		Bytes Read=55
+	File Output Format Counters 
+		Bytes Written=90
+03:06:02,029  WARN main NativeCodeLoader:<clinit>:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+03:06:02,182  INFO main deprecation:warnOnceIfDeprecated:840 - session.id is deprecated. Instead, use dfs.metrics.session-id
+03:06:02,183  INFO main JvmMetrics:init:76 - Initializing JVM Metrics with processName=JobTracker, sessionId=
+03:06:02,202  INFO main JvmMetrics:init:71 - Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+03:06:02,476  WARN main JobSubmitter:copyAndConfigureFiles:149 - Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+03:06:02,482  WARN main JobSubmitter:copyAndConfigureFiles:258 - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+03:06:02,496  INFO main FileInputFormat:listStatus:253 - Total input paths to process : 1
+03:06:02,534  INFO main JobSubmitter:submitJobInternal:394 - number of splits:1
+03:06:02,553  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.job.name is deprecated. Instead, use mapreduce.job.name
+03:06:02,554  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.input.dir is deprecated. Instead, use mapreduce.input.fileinputformat.inputdir
+03:06:02,554  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.value.class is deprecated. Instead, use mapreduce.job.output.value.class
+03:06:02,555  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+03:06:02,555  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.working.dir is deprecated. Instead, use mapreduce.job.working.dir
+03:06:02,555  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+03:06:02,555  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+03:06:02,555  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.mapoutput.key.class is deprecated. Instead, use mapreduce.map.output.key.class
+03:06:02,556  INFO main deprecation:warnOnceIfDeprecated:840 - user.name is deprecated. Instead, use mapreduce.job.user.name
+03:06:02,557  INFO main deprecation:warnOnceIfDeprecated:840 - mapred.output.key.class is deprecated. Instead, use mapreduce.job.output.key.class
+03:06:02,640  INFO main JobSubmitter:printTokens:477 - Submitting tokens for job: job_local1106345697_0001
+03:06:02,672  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/staging/lalithajetty1106345697/.staging/job_local1106345697_0001/job.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+03:06:02,672  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/staging/lalithajetty1106345697/.staging/job_local1106345697_0001/job.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+03:06:02,766  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/local/localRunner/lalithajetty/job_local1106345697_0001/job_local1106345697_0001.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+03:06:02,767  WARN main Configuration:loadProperty:2172 - file:/tmp/hadoop-lalithajetty/mapred/local/localRunner/lalithajetty/job_local1106345697_0001/job_local1106345697_0001.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+03:06:02,771  INFO main Job:submit:1272 - The url to track the job: http://localhost:8080/
+03:06:02,772  INFO Thread-10 LocalJobRunner:createOutputCommitter:323 - OutputCommitter set in config null
+03:06:02,773  INFO main Job:monitorAndPrintJob:1317 - Running job: job_local1106345697_0001
+03:06:02,773  INFO Thread-10 LocalJobRunner:createOutputCommitter:341 - OutputCommitter is org.apache.hadoop.mapred.FileOutputCommitter
+03:06:02,796  INFO Thread-10 LocalJobRunner:run:389 - Waiting for map tasks
+03:06:02,798  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:run:216 - Starting task: attempt_local1106345697_0001_m_000000_0
+03:06:02,821  INFO LocalJobRunner Map Task Executor #0 ProcfsBasedProcessTree:isAvailable:129 - ProcfsBasedProcessTree currently is supported only on Linux.
+03:06:02,821  INFO LocalJobRunner Map Task Executor #0 Task:initialize:581 -  Using ResourceCalculatorProcessTree : null
+03:06:02,826  INFO LocalJobRunner Map Task Executor #0 MapTask:updateJobWithSplit:461 - Processing split: file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/input.txt:0+22
+03:06:02,831  INFO LocalJobRunner Map Task Executor #0 MapTask:runOldMapper:415 - numReduceTasks: 1
+03:06:02,835  INFO LocalJobRunner Map Task Executor #0 MapTask:createSortingCollector:387 - Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+03:06:02,894  INFO LocalJobRunner Map Task Executor #0 MapTask:setEquator:1183 - (EQUATOR) 0 kvi 26214396(104857584)
+03:06:02,894  INFO LocalJobRunner Map Task Executor #0 MapTask:init:975 - mapreduce.task.io.sort.mb: 100
+03:06:02,894  INFO LocalJobRunner Map Task Executor #0 MapTask:init:976 - soft limit at 83886080
+03:06:02,894  INFO LocalJobRunner Map Task Executor #0 MapTask:init:977 - bufstart = 0; bufvoid = 104857600
+03:06:02,894  INFO LocalJobRunner Map Task Executor #0 MapTask:init:978 - kvstart = 26214396; length = 6553600
+03:06:02,900  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:statusUpdate:513 - 
+03:06:02,900  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1440 - Starting flush of map output
+03:06:02,900  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1459 - Spilling map output
+03:06:02,900  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1460 - bufstart = 0; bufend = 78; bufvoid = 104857600
+03:06:02,900  INFO LocalJobRunner Map Task Executor #0 MapTask:flush:1462 - kvstart = 26214396(104857584); kvend = 26214372(104857488); length = 25/6553600
+03:06:02,907  INFO LocalJobRunner Map Task Executor #0 MapTask:sortAndSpill:1648 - Finished spill 0
+03:06:02,910  INFO LocalJobRunner Map Task Executor #0 Task:done:995 - Task:attempt_local1106345697_0001_m_000000_0 is done. And is in the process of committing
+03:06:02,914  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:statusUpdate:513 - file:/Users/lalithajetty/Documents/MS in Data Science/2018 Summer/Big Data Programming/CommonFriend/input.txt:0+22
+03:06:02,914  INFO LocalJobRunner Map Task Executor #0 Task:sendDone:1115 - Task 'attempt_local1106345697_0001_m_000000_0' done.
+03:06:02,914  INFO LocalJobRunner Map Task Executor #0 LocalJobRunner:run:241 - Finishing task: attempt_local1106345697_0001_m_000000_0
+03:06:02,914  INFO Thread-10 LocalJobRunner:run:397 - Map task executor complete.
+03:06:02,921  INFO Thread-10 ProcfsBasedProcessTree:isAvailable:129 - ProcfsBasedProcessTree currently is supported only on Linux.
+03:06:02,921  INFO Thread-10 Task:initialize:581 -  Using ResourceCalculatorProcessTree : null
+03:06:02,924  INFO Thread-10 Merger:merge:568 - Merging 1 sorted segments
+03:06:02,937  INFO Thread-10 Merger:merge:667 - Down to the last merge-pass, with 1 segments left of total size: 88 bytes
+03:06:02,938  INFO Thread-10 LocalJobRunner:statusUpdate:513 - 
+03:06:02,950  WARN Thread-10 LocalJobRunner:run:482 - job_local1106345697_0001
+java.lang.NullPointerException
+	at mypackage.CommonFriend$Reduce.reduce(CommonFriend.java:60)
+	at mypackage.CommonFriend$Reduce.reduce(CommonFriend.java:50)
+	at org.apache.hadoop.mapred.ReduceTask.runOldReducer(ReduceTask.java:462)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:408)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:445)
+03:06:03,778  INFO main Job:monitorAndPrintJob:1338 - Job job_local1106345697_0001 running in uber mode : false
+03:06:03,780  INFO main Job:monitorAndPrintJob:1345 -  map 100% reduce 0%
+03:06:03,782  INFO main Job:monitorAndPrintJob:1358 - Job job_local1106345697_0001 failed with state FAILED due to: NA
+03:06:03,789  INFO main Job:monitorAndPrintJob:1363 - Counters: 24
+	File System Counters
+		FILE: Number of bytes read=237
+		FILE: Number of bytes written=192932
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=2
+		Map output records=7
+		Map output bytes=78
+		Map output materialized bytes=98
+		Input split bytes=161
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=0
+		Reduce shuffle bytes=0
+		Reduce input records=0
+		Reduce output records=0
+		Spilled Records=7
+		Shuffled Maps =0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=257425408
+	File Input Format Counters 
+		Bytes Read=22
+	File Output Format Counters 
+		Bytes Written=0
